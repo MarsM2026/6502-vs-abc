@@ -1,2 +1,10 @@
 control deep 7: out: 4697 gates (AND 1409, NAND 2073, NO
 control deep 8: out: 4691 gates (AND 1400, NAND 2081, NO
+pass 1 done: 4721 -> 4711 gates (4095 windows, 3412 with don't-cares, 10 improved, 0 rejected for loops, 30039s)
+final:         4711 gates (AND 1426, NAND 2084, NOR 396, NOT 148, OR 623, XNOR 20, XOR 14), 446 flip-flops, 5328 signals
+windows+deep 1: out: 4653 gates (AND 1368, NAND 2070, NO
+windows+deep 2: out: 4633 gates (AND 1359, NAND 2105, NO
+real6502_deep8: END settle_avg=4.01 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (8.5s)
+real6502_dwin_deep2: END settle_avg=4.01 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (8.4s)
+
+[exited with code 0]

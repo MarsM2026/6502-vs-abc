@@ -299,8 +299,12 @@ logic plus "settling" registers. After one ABC run the model has 8,888 gates and
 registers. It runs in lockstep with perfect6502 and passes Klaus Dormann's complete
 functional test (96,241,378 cycles, 6 h 18 min in C).
 Optimising that model with the same method (ABC to its plateau of 7,416 gates, then window
-CGP and ABC again) gives 7,150 gates, −3.6% beyond converged ABC. It runs in lockstep with
-perfect6502 and passes the full functional test.
+CGP and ABC again) gives 7,150 gates, which passes the full functional test. That −3.6%
+was measured against the default ABC script, though: ABC's `&deepsyn` alone takes the
+model to 4,721 gates. Window CGP on that netlist followed by two more deepsyn runs gives
+**4,633 gates**, 1.2% below deepsyn alone (4,691). It runs in lockstep with perfect6502 and passes the
+full functional test
+(details in [docs/real6502.md](docs/real6502.md)).
 
 ## Roadmap
 
