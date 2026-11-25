@@ -1,0 +1,26 @@
+abc 5: out: 7576 gates (AND 2455, NAND 3526, NOR 823, NOT 141, OR 605, XNOR 21, XOR 5), 525 flip-flops, 8118 signals (28s)
+abc 6: out: 7544 gates (AND 2487, NAND 3495, NOR 801, NOT 143, OR 593, XNOR 19, XOR 6), 525 flip-flops, 8086 signals (22s)
+abc 7: out: 7482 gates (AND 2422, NAND 3513, NOR 800, NOT 140, OR 582, XNOR 18, XOR 7), 525 flip-flops, 8024 signals (23s)
+abc 8: out: 7466 gates (AND 2420, NAND 3484, NOR 811, NOT 136, OR 590, XNOR 16, XOR 9), 525 flip-flops, 8008 signals (21s)
+abc 9: out: 7466 gates (AND 2460, NAND 3462, NOR 785, NOT 143, OR 590, XNOR 18, XOR 8), 525 flip-flops, 8008 signals (22s)
+abc 10: out: 7453 gates (AND 2429, NAND 3472, NOR 794, NOT 137, OR 596, XNOR 17, XOR 8), 525 flip-flops, 7995 signals (22s)
+abc 11: out: 7445 gates (AND 2421, NAND 3478, NOR 800, NOT 137, OR 584, XNOR 17, XOR 8), 525 flip-flops, 7987 signals (21s)
+abc 12: out: 7436 gates (AND 2434, NAND 3443, NOR 798, NOT 141, OR 594, XNOR 18, XOR 8), 525 flip-flops, 7978 signals (21s)
+abc 13: 7437
+abc 14: 7438
+abc 15: 7431
+abc 16: 7429
+abc 17: 7426
+abc 18: 7416
+abc 19: 7426
+abc 20: 7426
+abc 21: 7425
+abc 22: 7417
+abc 23: 7419
+abc 24: 7429
+win+abc 1: 7207
+win+abc 2: 7202
+win+abc 3: 7173
+win+abc 4: 7150
+real6502_abc18: END settle_avg=4.03 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (14.4s)
+real6502_winabc4: END settle_avg=4.03 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (13.8s)

@@ -1,0 +1,62 @@
+start:         1994 gates (AND 632, NAND 1058, NOR 44, NOT 36, OR 184, XNOR 24, XOR 16), 143 flip-flops, 2152 signals
+after cleanup: 1994 gates (AND 632, NAND 1058, NOR 44, NOT 36, OR 184, XNOR 24, XOR 16), 143 flip-flops, 2152 signals
+estimated NMOS transistors (combinational, nmos_cost model): 5710
+settings: k=13 max_gates=40 gens=2000 dont_cares=True invariants=0 cost=nmos
+  pass 1: 50 windows (26 with don't-cares), 6 improved, gates 1993 (357s)
+  pass 1: 100 windows (54 with don't-cares), 8 improved, gates 1994 (1056s)
+  pass 1: 150 windows (84 with don't-cares), 12 improved, gates 1996 (1512s)
+  pass 1: 200 windows (110 with don't-cares), 16 improved, gates 1999 (2116s)
+  pass 1: 250 windows (141 with don't-cares), 18 improved, gates 1998 (2580s)
+  pass 1: 300 windows (173 with don't-cares), 19 improved, gates 1999 (3090s)
+  pass 1: 350 windows (199 with don't-cares), 20 improved, gates 1999 (3497s)
+  pass 1: 400 windows (223 with don't-cares), 24 improved, gates 1999 (3962s)
+  pass 1: 450 windows (252 with don't-cares), 24 improved, gates 1999 (4489s)
+  pass 1: 500 windows (277 with don't-cares), 25 improved, gates 1999 (4921s)
+  pass 1: 550 windows (304 with don't-cares), 26 improved, gates 2000 (5270s)
+  pass 1: 600 windows (330 with don't-cares), 28 improved, gates 2002 (5555s)
+  pass 1: 650 windows (359 with don't-cares), 29 improved, gates 2003 (5837s)
+  pass 1: 700 windows (387 with don't-cares), 30 improved, gates 2005 (6043s)
+  pass 1: 750 windows (416 with don't-cares), 31 improved, gates 2006 (6247s)
+  pass 1: 800 windows (443 with don't-cares), 31 improved, gates 2006 (6434s)
+  pass 1: 850 windows (468 with don't-cares), 31 improved, gates 2006 (6637s)
+  pass 1: 900 windows (494 with don't-cares), 34 improved, gates 2008 (6875s)
+  pass 1: 950 windows (522 with don't-cares), 36 improved, gates 2009 (7100s)
+  pass 1: 1000 windows (553 with don't-cares), 36 improved, gates 2009 (7310s)
+  pass 1: 1050 windows (577 with don't-cares), 37 improved, gates 2008 (7524s)
+  pass 1: 1100 windows (602 with don't-cares), 37 improved, gates 2008 (7716s)
+  pass 1: 1150 windows (626 with don't-cares), 37 improved, gates 2008 (7901s)
+  pass 1: 1200 windows (651 with don't-cares), 38 improved, gates 2009 (8179s)
+  pass 1: 1250 windows (682 with don't-cares), 39 improved, gates 2010 (8429s)
+  pass 1: 1300 windows (711 with don't-cares), 39 improved, gates 2010 (8746s)
+  pass 1: 1350 windows (739 with don't-cares), 39 improved, gates 2010 (9040s)
+  pass 1: 1400 windows (764 with don't-cares), 41 improved, gates 2012 (9264s)
+  pass 1: 1450 windows (787 with don't-cares), 42 improved, gates 2012 (9466s)
+  pass 1: 1500 windows (814 with don't-cares), 43 improved, gates 2013 (9663s)
+  pass 1: 1550 windows (843 with don't-cares), 43 improved, gates 2013 (9885s)
+  pass 1: 1600 windows (870 with don't-cares), 45 improved, gates 2014 (10073s)
+  pass 1: 1650 windows (896 with don't-cares), 46 improved, gates 2015 (10365s)
+  pass 1: 1700 windows (916 with don't-cares), 47 improved, gates 2016 (10682s)
+  pass 1: 1750 windows (942 with don't-cares), 48 improved, gates 2016 (11031s)
+  pass 1: 1800 windows (973 with don't-cares), 48 improved, gates 2016 (11357s)
+  pass 1: 1850 windows (1001 with don't-cares), 50 improved, gates 2016 (11640s)
+  pass 1: 1900 windows (1024 with don't-cares), 51 improved, gates 2017 (11908s)
+  pass 1: 1950 windows (1048 with don't-cares), 51 improved, gates 2017 (12196s)
+  pass 1: 2000 windows (1075 with don't-cares), 52 improved, gates 2018 (12495s)
+  pass 1: 2050 windows (1098 with don't-cares), 53 improved, gates 2019 (12759s)
+  pass 1: 2100 windows (1115 with don't-cares), 53 improved, gates 2019 (12960s)
+  pass 1: 2150 windows (1141 with don't-cares), 53 improved, gates 2019 (13180s)
+pass 1 done: 1994 -> 2019 gates (2175 windows, 1153 with don't-cares, 53 improved, 13 rejected for loops, 13294s)
+final:         2001 gates (AND 629, NAND 1046, NOR 47, NOT 55, OR 184, XNOR 24, XOR 16), 143 flip-flops, 3363 signals
+estimated NMOS transistors (combinational, nmos_cost model): 5646
+saved build\cpu_nmos.json; validate with: python src/csim.py --netlist build\cpu_nmos.json
+Warning: ABC: merged SCL conversion failed, falling back to liberty format
+Warning: ABC: Merged scl conversion failed, using liberty format
+build\cpu_nmos.json: combinational 5020 NMOS transistors in 1493 cells, 143 flip-flops x 6 = 858, total 5878
+  cells: {'INV': 382, 'NOR2': 367, 'NAND2': 150, 'AOI21': 148, 'OAI21': 137, 'OAI22': 47, 'NOR3': 36, 'AOI211': 34, 'AOI221': 24, 'OAI221': 24, 'AOI22': 23, 'OAI211': 22, 'NAND3': 21, 'NOR5': 18, 'NOR4': 14, 'AOI31': 13, 'OAI31': 12, 'NAND4': 10, 'OAI32': 7, 'AOI32': 4}
+Warning: ABC: merged SCL conversion failed, falling back to liberty format
+Warning: ABC: Merged scl conversion failed, using liberty format
+build\cpu_nmos.json [structural]: combinational 5058 NMOS transistors in 1483 cells, 143 flip-flops x 6 = 858, total 5916
+  cells: {'INV': 367, 'NOR2': 332, 'NAND2': 178, 'OAI21': 144, 'AOI21': 124, 'NOR3': 54, 'AOI22': 46, 'AOI221': 44, 'OAI221': 38, 'AOI211': 23, 'NAND3': 22, 'AOI31': 18, 'OAI22': 18, 'NAND4': 14, 'OAI211': 14, 'OAI31': 14, 'NOR5': 10, 'OAI32': 9, 'AOI32': 7, 'NOR4': 7}
+netlist: 2001 gates (AND 629, NAND 1046, NOR 47, NOT 55, OR 184, XNOR 24, XOR 16), 143 flip-flops, 3363 signals
+compiled in 10.4s -> build\sim_nmos.exe
+PASS cycles=96241383  (599.6s)

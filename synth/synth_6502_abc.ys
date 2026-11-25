@@ -1,0 +1,21 @@
+# Same flow as synth_6502.ys, but WITH ABC logic optimisation, to give an honest
+# conventional-optimiser baseline. Needs a native Yosys (OSS CAD Suite); ABC
+# crashes in the yowasp-yosys WebAssembly build.
+#
+# Run from the project root:
+#   C:/tools/oss-cad-suite/bin/yosys -s synth/synth_6502_abc.ys
+
+read_verilog vendor/verilog-6502/ALU.v vendor/verilog-6502/cpu.v
+synth -top cpu -flatten
+
+async2sync
+dfflegalize -cell $_DFF_P_ 01
+opt -full -nodffe -nosdff
+
+# Map all combinational logic onto exactly the CGP gate set.
+abc -g AND,NAND,OR,NOR,XOR,XNOR
+opt -full -nodffe -nosdff
+opt_clean -purge
+
+tee -o build/cpu_abc.stat stat
+write_json build/cpu_abc.json

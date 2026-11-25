@@ -1,0 +1,1546 @@
+{
+ "target": "adder4",
+ "seed": 1,
+ "seeded": false,
+ "nodes": 100,
+ "lambda": 4,
+ "generations": 400000,
+ "evaluations": 1600001,
+ "correct": true,
+ "first_correct_generation": 294529,
+ "gates": 33,
+ "genome": {
+  "n_inputs": 9,
+  "funcs": [
+   2,
+   5,
+   2,
+   6,
+   5,
+   2,
+   5,
+   0,
+   5,
+   2,
+   1,
+   0,
+   2,
+   2,
+   2,
+   1,
+   1,
+   1,
+   5,
+   5,
+   2,
+   1,
+   0,
+   3,
+   0,
+   5,
+   2,
+   1,
+   0,
+   5,
+   4,
+   2,
+   0,
+   2,
+   5,
+   4,
+   3,
+   0,
+   5,
+   2,
+   3,
+   3,
+   5,
+   2,
+   5,
+   2,
+   3,
+   2,
+   3,
+   5,
+   1,
+   5,
+   2,
+   2,
+   5,
+   1,
+   1,
+   0,
+   5,
+   3,
+   0,
+   4,
+   6,
+   1,
+   5,
+   0,
+   2,
+   2,
+   3,
+   5,
+   3,
+   2,
+   2,
+   2,
+   0,
+   5,
+   3,
+   1,
+   0,
+   3,
+   4,
+   2,
+   5,
+   4,
+   2,
+   3,
+   2,
+   1,
+   6,
+   4,
+   6,
+   2,
+   3,
+   6,
+   3,
+   0,
+   5,
+   5,
+   2,
+   2
+  ],
+  "in1": [
+   5,
+   0,
+   2,
+   10,
+   11,
+   3,
+   0,
+   9,
+   10,
+   8,
+   9,
+   13,
+   4,
+   6,
+   1,
+   16,
+   4,
+   4,
+   2,
+   23,
+   27,
+   28,
+   18,
+   12,
+   9,
+   30,
+   30,
+   11,
+   14,
+   31,
+   27,
+   24,
+   7,
+   5,
+   11,
+   17,
+   1,
+   42,
+   19,
+   38,
+   40,
+   8,
+   37,
+   9,
+   37,
+   47,
+   54,
+   45,
+   45,
+   24,
+   54,
+   19,
+   52,
+   27,
+   3,
+   27,
+   62,
+   34,
+   40,
+   25,
+   14,
+   50,
+   18,
+   0,
+   9,
+   11,
+   22,
+   30,
+   31,
+   9,
+   29,
+   35,
+   35,
+   53,
+   81,
+   34,
+   52,
+   14,
+   67,
+   5,
+   2,
+   77,
+   6,
+   82,
+   14,
+   2,
+   51,
+   23,
+   28,
+   16,
+   88,
+   66,
+   42,
+   17,
+   39,
+   69,
+   83,
+   14,
+   34,
+   62
+  ],
+  "in2": [
+   1,
+   4,
+   0,
+   11,
+   5,
+   7,
+   5,
+   15,
+   8,
+   0,
+   15,
+   0,
+   3,
+   11,
+   6,
+   5,
+   12,
+   23,
+   6,
+   16,
+   28,
+   27,
+   12,
+   15,
+   31,
+   6,
+   9,
+   16,
+   21,
+   0,
+   33,
+   31,
+   40,
+   29,
+   2,
+   9,
+   15,
+   20,
+   22,
+   20,
+   22,
+   42,
+   9,
+   50,
+   34,
+   33,
+   35,
+   23,
+   23,
+   51,
+   17,
+   59,
+   49,
+   39,
+   15,
+   2,
+   5,
+   6,
+   52,
+   46,
+   62,
+   49,
+   63,
+   4,
+   38,
+   61,
+   67,
+   3,
+   47,
+   56,
+   59,
+   26,
+   32,
+   3,
+   11,
+   62,
+   23,
+   6,
+   6,
+   72,
+   29,
+   78,
+   0,
+   69,
+   84,
+   61,
+   75,
+   82,
+   10,
+   86,
+   81,
+   72,
+   90,
+   66,
+   15,
+   11,
+   45,
+   97,
+   92,
+   34
+  ],
+  "outputs": [
+   17,
+   73,
+   54,
+   93,
+   107
+  ]
+ },
+ "history": [
+  {
+   "generation": 0,
+   "evaluations": 1,
+   "score": 1344,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.0006789999315515161
+  },
+  {
+   "generation": 21,
+   "evaluations": 85,
+   "score": 1360,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.011384999961592257
+  },
+  {
+   "generation": 23,
+   "evaluations": 93,
+   "score": 1376,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.012146599940024316
+  },
+  {
+   "generation": 30,
+   "evaluations": 121,
+   "score": 1392,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.01708849996794015
+  },
+  {
+   "generation": 44,
+   "evaluations": 177,
+   "score": 1408,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.022138500004075468
+  },
+  {
+   "generation": 65,
+   "evaluations": 261,
+   "score": 1472,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.03432139998767525
+  },
+  {
+   "generation": 133,
+   "evaluations": 533,
+   "score": 1504,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.0649065999314189
+  },
+  {
+   "generation": 176,
+   "evaluations": 705,
+   "score": 1536,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.08951719990000129
+  },
+  {
+   "generation": 179,
+   "evaluations": 717,
+   "score": 1568,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.091508699930273
+  },
+  {
+   "generation": 202,
+   "evaluations": 809,
+   "score": 1600,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.10413629992399365
+  },
+  {
+   "generation": 204,
+   "evaluations": 817,
+   "score": 1632,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.10546809993684292
+  },
+  {
+   "generation": 208,
+   "evaluations": 833,
+   "score": 1664,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.1081523000029847
+  },
+  {
+   "generation": 218,
+   "evaluations": 873,
+   "score": 1696,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.11451609991490841
+  },
+  {
+   "generation": 226,
+   "evaluations": 905,
+   "score": 1728,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.1174649999011308
+  },
+  {
+   "generation": 276,
+   "evaluations": 1105,
+   "score": 1760,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.13881959998980165
+  },
+  {
+   "generation": 370,
+   "evaluations": 1481,
+   "score": 1780,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.19611419993452728
+  },
+  {
+   "generation": 371,
+   "evaluations": 1485,
+   "score": 1800,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.19692959997337312
+  },
+  {
+   "generation": 375,
+   "evaluations": 1501,
+   "score": 1804,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.20083250000607222
+  },
+  {
+   "generation": 383,
+   "evaluations": 1533,
+   "score": 1828,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.20532339997589588
+  },
+  {
+   "generation": 388,
+   "evaluations": 1553,
+   "score": 1860,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.2080757999792695
+  },
+  {
+   "generation": 391,
+   "evaluations": 1565,
+   "score": 1864,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.21216769993770868
+  },
+  {
+   "generation": 425,
+   "evaluations": 1701,
+   "score": 1868,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.23738499998580664
+  },
+  {
+   "generation": 426,
+   "evaluations": 1705,
+   "score": 1876,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.23785019991919398
+  },
+  {
+   "generation": 433,
+   "evaluations": 1733,
+   "score": 1884,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.24091139994561672
+  },
+  {
+   "generation": 450,
+   "evaluations": 1801,
+   "score": 1888,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.24923209997359663
+  },
+  {
+   "generation": 628,
+   "evaluations": 2513,
+   "score": 1904,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.3467299999902025
+  },
+  {
+   "generation": 671,
+   "evaluations": 2685,
+   "score": 1920,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.3654685999499634
+  },
+  {
+   "generation": 673,
+   "evaluations": 2693,
+   "score": 1952,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.36623529996722937
+  },
+  {
+   "generation": 680,
+   "evaluations": 2721,
+   "score": 1968,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.36874859989620745
+  },
+  {
+   "generation": 721,
+   "evaluations": 2885,
+   "score": 1984,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.3966800000052899
+  },
+  {
+   "generation": 848,
+   "evaluations": 3393,
+   "score": 2048,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.48589339992031455
+  },
+  {
+   "generation": 1662,
+   "evaluations": 6649,
+   "score": 2080,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.921161999925971
+  },
+  {
+   "generation": 1736,
+   "evaluations": 6945,
+   "score": 2112,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.9629069999791682
+  },
+  {
+   "generation": 1758,
+   "evaluations": 7033,
+   "score": 2176,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 0.97223839990329
+  },
+  {
+   "generation": 3698,
+   "evaluations": 14793,
+   "score": 2192,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 2.5222511999309063
+  },
+  {
+   "generation": 3747,
+   "evaluations": 14989,
+   "score": 2208,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 2.549538999912329
+  },
+  {
+   "generation": 5000,
+   "evaluations": 20001,
+   "score": 2208,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 3.4119247999042273
+  },
+  {
+   "generation": 10000,
+   "evaluations": 40001,
+   "score": 2208,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 7.611746399896219
+  },
+  {
+   "generation": 11924,
+   "evaluations": 47697,
+   "score": 2216,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 8.988252199953422
+  },
+  {
+   "generation": 12120,
+   "evaluations": 48481,
+   "score": 2220,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 9.159591099945828
+  },
+  {
+   "generation": 12125,
+   "evaluations": 48501,
+   "score": 2228,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 9.164658699999563
+  },
+  {
+   "generation": 12301,
+   "evaluations": 49205,
+   "score": 2240,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 9.360482899937779
+  },
+  {
+   "generation": 15000,
+   "evaluations": 60001,
+   "score": 2240,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 11.153188399970531
+  },
+  {
+   "generation": 18501,
+   "evaluations": 74005,
+   "score": 2272,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 13.958703299984336
+  },
+  {
+   "generation": 20000,
+   "evaluations": 80001,
+   "score": 2272,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 15.84132189990487
+  },
+  {
+   "generation": 20987,
+   "evaluations": 83949,
+   "score": 2304,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 16.662357299937867
+  },
+  {
+   "generation": 21456,
+   "evaluations": 85825,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 17.178899999940768
+  },
+  {
+   "generation": 25000,
+   "evaluations": 100001,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 19.947367799934
+  },
+  {
+   "generation": 30000,
+   "evaluations": 120001,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 23.40736879990436
+  },
+  {
+   "generation": 35000,
+   "evaluations": 140001,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 28.048292099963874
+  },
+  {
+   "generation": 40000,
+   "evaluations": 160001,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 31.39841079991311
+  },
+  {
+   "generation": 45000,
+   "evaluations": 180001,
+   "score": 2336,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 35.97374809999019
+  },
+  {
+   "generation": 49583,
+   "evaluations": 198333,
+   "score": 2368,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 39.171960999956354
+  },
+  {
+   "generation": 50000,
+   "evaluations": 200001,
+   "score": 2368,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 39.47294509992935
+  },
+  {
+   "generation": 55000,
+   "evaluations": 220001,
+   "score": 2368,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.15419149992522
+  },
+  {
+   "generation": 55160,
+   "evaluations": 220641,
+   "score": 2372,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.2826672999654
+  },
+  {
+   "generation": 55240,
+   "evaluations": 220961,
+   "score": 2376,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.328642799984664
+  },
+  {
+   "generation": 55739,
+   "evaluations": 222957,
+   "score": 2384,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.64556569990236
+  },
+  {
+   "generation": 56315,
+   "evaluations": 225261,
+   "score": 2400,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.9968874999322
+  },
+  {
+   "generation": 56317,
+   "evaluations": 225269,
+   "score": 2424,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 43.997750799986534
+  },
+  {
+   "generation": 56330,
+   "evaluations": 225321,
+   "score": 2432,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 44.006999999983236
+  },
+  {
+   "generation": 60000,
+   "evaluations": 240001,
+   "score": 2432,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 47.70521779998671
+  },
+  {
+   "generation": 65000,
+   "evaluations": 260001,
+   "score": 2432,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 51.174048899905756
+  },
+  {
+   "generation": 70000,
+   "evaluations": 280001,
+   "score": 2432,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 55.74892879999243
+  },
+  {
+   "generation": 75000,
+   "evaluations": 300001,
+   "score": 2432,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 59.67817929992452
+  },
+  {
+   "generation": 78632,
+   "evaluations": 314529,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 62.765151600004174
+  },
+  {
+   "generation": 80000,
+   "evaluations": 320001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 63.69489349995274
+  },
+  {
+   "generation": 85000,
+   "evaluations": 340001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 68.53240999998525
+  },
+  {
+   "generation": 90000,
+   "evaluations": 360001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 72.88688139989972
+  },
+  {
+   "generation": 95000,
+   "evaluations": 380001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 77.88847869995516
+  },
+  {
+   "generation": 100000,
+   "evaluations": 400001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 81.87178879999556
+  },
+  {
+   "generation": 105000,
+   "evaluations": 420001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 87.3910937999608
+  },
+  {
+   "generation": 110000,
+   "evaluations": 440001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 91.1221438999055
+  },
+  {
+   "generation": 115000,
+   "evaluations": 460001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 96.10132519993931
+  },
+  {
+   "generation": 120000,
+   "evaluations": 480001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 100.03650589997414
+  },
+  {
+   "generation": 125000,
+   "evaluations": 500001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 103.90765869989991
+  },
+  {
+   "generation": 130000,
+   "evaluations": 520001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 109.14643369999249
+  },
+  {
+   "generation": 135000,
+   "evaluations": 540001,
+   "score": 2440,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 113.19975669996347
+  },
+  {
+   "generation": 138912,
+   "evaluations": 555649,
+   "score": 2442,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 117.08354079991113
+  },
+  {
+   "generation": 138956,
+   "evaluations": 555825,
+   "score": 2450,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 117.15997059992515
+  },
+  {
+   "generation": 138992,
+   "evaluations": 555969,
+   "score": 2458,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 117.21100039989688
+  },
+  {
+   "generation": 140000,
+   "evaluations": 560001,
+   "score": 2458,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 118.27819230000023
+  },
+  {
+   "generation": 140674,
+   "evaluations": 562697,
+   "score": 2466,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 118.91640180000104
+  },
+  {
+   "generation": 140728,
+   "evaluations": 562913,
+   "score": 2468,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 118.95179999992251
+  },
+  {
+   "generation": 140844,
+   "evaluations": 563377,
+   "score": 2476,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 119.04782919993158
+  },
+  {
+   "generation": 143974,
+   "evaluations": 575897,
+   "score": 2482,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 121.54107319994364
+  },
+  {
+   "generation": 145000,
+   "evaluations": 580001,
+   "score": 2482,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 122.77374889992643
+  },
+  {
+   "generation": 150000,
+   "evaluations": 600001,
+   "score": 2482,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 128.11791699996684
+  },
+  {
+   "generation": 155000,
+   "evaluations": 620001,
+   "score": 2482,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 132.59490139991976
+  },
+  {
+   "generation": 156905,
+   "evaluations": 627621,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 134.19780460000038
+  },
+  {
+   "generation": 160000,
+   "evaluations": 640001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 138.0263838999672
+  },
+  {
+   "generation": 165000,
+   "evaluations": 660001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 142.1549299999606
+  },
+  {
+   "generation": 170000,
+   "evaluations": 680001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 147.44978029991034
+  },
+  {
+   "generation": 175000,
+   "evaluations": 700001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 151.93861959991045
+  },
+  {
+   "generation": 180000,
+   "evaluations": 720001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 157.0945636999095
+  },
+  {
+   "generation": 185000,
+   "evaluations": 740001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 160.94808129989542
+  },
+  {
+   "generation": 190000,
+   "evaluations": 760001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 166.49105119996238
+  },
+  {
+   "generation": 195000,
+   "evaluations": 780001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 171.07952409994323
+  },
+  {
+   "generation": 200000,
+   "evaluations": 800001,
+   "score": 2500,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 177.09038089995738
+  },
+  {
+   "generation": 203055,
+   "evaluations": 812221,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 179.92162629996892
+  },
+  {
+   "generation": 205000,
+   "evaluations": 820001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 181.87867889995687
+  },
+  {
+   "generation": 210000,
+   "evaluations": 840001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 187.70910969993565
+  },
+  {
+   "generation": 215000,
+   "evaluations": 860001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 192.25328959990293
+  },
+  {
+   "generation": 220000,
+   "evaluations": 880001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 198.41512899997178
+  },
+  {
+   "generation": 225000,
+   "evaluations": 900001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 204.855462999898
+  },
+  {
+   "generation": 230000,
+   "evaluations": 920001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 210.76134879991878
+  },
+  {
+   "generation": 235000,
+   "evaluations": 940001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 216.70240459998604
+  },
+  {
+   "generation": 240000,
+   "evaluations": 960001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 220.72783339989837
+  },
+  {
+   "generation": 245000,
+   "evaluations": 980001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 225.6685187999392
+  },
+  {
+   "generation": 250000,
+   "evaluations": 1000001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 231.47941459994763
+  },
+  {
+   "generation": 255000,
+   "evaluations": 1020001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 238.0310639999807
+  },
+  {
+   "generation": 260000,
+   "evaluations": 1040001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 242.60385979991406
+  },
+  {
+   "generation": 265000,
+   "evaluations": 1060001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 248.060822899919
+  },
+  {
+   "generation": 270000,
+   "evaluations": 1080001,
+   "score": 2512,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 252.52588249999098
+  },
+  {
+   "generation": 270687,
+   "evaluations": 1082749,
+   "score": 2514,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 252.9932528999634
+  },
+  {
+   "generation": 270689,
+   "evaluations": 1082757,
+   "score": 2516,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 252.99624909996055
+  },
+  {
+   "generation": 270774,
+   "evaluations": 1083097,
+   "score": 2520,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 253.0807018999476
+  },
+  {
+   "generation": 271097,
+   "evaluations": 1084389,
+   "score": 2528,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 253.35963019996416
+  },
+  {
+   "generation": 275000,
+   "evaluations": 1100001,
+   "score": 2528,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 258.3914003999671
+  },
+  {
+   "generation": 279201,
+   "evaluations": 1116805,
+   "score": 2544,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 262.68773869995493
+  },
+  {
+   "generation": 280000,
+   "evaluations": 1120001,
+   "score": 2544,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 263.3974745000014
+  },
+  {
+   "generation": 285000,
+   "evaluations": 1140001,
+   "score": 2544,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 269.1927888999926
+  },
+  {
+   "generation": 289965,
+   "evaluations": 1159861,
+   "score": 2548,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 274.19640619994607
+  },
+  {
+   "generation": 290000,
+   "evaluations": 1160001,
+   "score": 2548,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 274.2247745000059
+  },
+  {
+   "generation": 290043,
+   "evaluations": 1160173,
+   "score": 2552,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 274.2958052000031
+  },
+  {
+   "generation": 293527,
+   "evaluations": 1174109,
+   "score": 2556,
+   "max_score": 2560,
+   "gates": 0,
+   "elapsed": 279.5644307999173
+  },
+  {
+   "generation": 294529,
+   "evaluations": 1178117,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 38,
+   "elapsed": 280.5819319000002
+  },
+  {
+   "generation": 294628,
+   "evaluations": 1178513,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 37,
+   "elapsed": 280.67331699992064
+  },
+  {
+   "generation": 295000,
+   "evaluations": 1180001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 37,
+   "elapsed": 280.9297341000056
+  },
+  {
+   "generation": 295705,
+   "evaluations": 1182821,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 34,
+   "elapsed": 281.4918021999765
+  },
+  {
+   "generation": 296034,
+   "evaluations": 1184137,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 281.8713032999076
+  },
+  {
+   "generation": 300000,
+   "evaluations": 1200001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 286.70714179996867
+  },
+  {
+   "generation": 305000,
+   "evaluations": 1220001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 293.04018779995386
+  },
+  {
+   "generation": 310000,
+   "evaluations": 1240001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 298.7986738999607
+  },
+  {
+   "generation": 315000,
+   "evaluations": 1260001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 303.3776568999747
+  },
+  {
+   "generation": 320000,
+   "evaluations": 1280001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 309.78645649994723
+  },
+  {
+   "generation": 325000,
+   "evaluations": 1300001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 314.8554520999314
+  },
+  {
+   "generation": 330000,
+   "evaluations": 1320001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 319.9348405000055
+  },
+  {
+   "generation": 335000,
+   "evaluations": 1340001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 323.9103783000028
+  },
+  {
+   "generation": 340000,
+   "evaluations": 1360001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 329.31328199990094
+  },
+  {
+   "generation": 345000,
+   "evaluations": 1380001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 333.4809361998923
+  },
+  {
+   "generation": 350000,
+   "evaluations": 1400001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 338.61220479989424
+  },
+  {
+   "generation": 355000,
+   "evaluations": 1420001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 342.9524980999995
+  },
+  {
+   "generation": 360000,
+   "evaluations": 1440001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 348.48625709989574
+  },
+  {
+   "generation": 365000,
+   "evaluations": 1460001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 352.67724089999683
+  },
+  {
+   "generation": 370000,
+   "evaluations": 1480001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 357.78379939997103
+  },
+  {
+   "generation": 375000,
+   "evaluations": 1500001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 362.4121108999243
+  },
+  {
+   "generation": 380000,
+   "evaluations": 1520001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 367.23803609993774
+  },
+  {
+   "generation": 385000,
+   "evaluations": 1540001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 371.56656680000015
+  },
+  {
+   "generation": 390000,
+   "evaluations": 1560001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 376.8413443999598
+  },
+  {
+   "generation": 395000,
+   "evaluations": 1580001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 380.67218869994394
+  },
+  {
+   "generation": 400000,
+   "evaluations": 1600001,
+   "score": 2560,
+   "max_score": 2560,
+   "gates": 33,
+   "elapsed": 384.8336278999923
+  }
+ ]
+}

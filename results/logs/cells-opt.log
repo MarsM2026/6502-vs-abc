@@ -1,0 +1,29 @@
+Warning: ABC: merged SCL conversion failed, falling back to liberty format
+Warning: ABC: Merged scl conversion failed, using liberty format
+start: 1074 cells, 4014 transistors + 143 flip-flops x 6 = 4872 (INV 329, AOI22 141, NAND2 126, AOI21 78, NOR2 63, OAI221 56, OAI22 50, NOR3 35, OAI21 34, AOI222 29, AOI211 19, AOI31 17, AOI32 15, NAND3 15, OAI32 13, OAI211 11, NOR4 10, AOI221 9, OAI31 9, NAND4 5, NOR5 3, NOR6 2, OAI222 2, NOR8 1, AOI33 1, NOR7 1)
+settings: k=12 max_cells=20 gens=2000 dont_cares=True
+  pass 1: 50 windows (35 with don't-cares), 1 improved, transistors 4012 (475s)
+  pass 1: 100 windows (60 with don't-cares), 1 improved, transistors 4012 (981s)
+  pass 1: 150 windows (88 with don't-cares), 1 improved, transistors 4012 (1126s)
+  pass 1: 200 windows (116 with don't-cares), 1 improved, transistors 4012 (1250s)
+  pass 1: 250 windows (148 with don't-cares), 2 improved, transistors 4011 (1391s)
+  pass 1: 300 windows (174 with don't-cares), 2 improved, transistors 4011 (1511s)
+  pass 1: 350 windows (203 with don't-cares), 2 improved, transistors 4011 (1665s)
+  pass 1: 400 windows (236 with don't-cares), 2 improved, transistors 4011 (1815s)
+  pass 1: 450 windows (266 with don't-cares), 2 improved, transistors 4011 (1988s)
+  pass 1: 500 windows (296 with don't-cares), 3 improved, transistors 4009 (2152s)
+  pass 1: 550 windows (319 with don't-cares), 3 improved, transistors 4009 (2313s)
+  pass 1: 600 windows (353 with don't-cares), 3 improved, transistors 4009 (2503s)
+  pass 1: 650 windows (391 with don't-cares), 3 improved, transistors 4009 (2684s)
+  pass 1: 700 windows (425 with don't-cares), 3 improved, transistors 4009 (2894s)
+  pass 1: 750 windows (463 with don't-cares), 3 improved, transistors 4009 (3072s)
+  pass 1: 800 windows (492 with don't-cares), 3 improved, transistors 4009 (3221s)
+  pass 1: 850 windows (525 with don't-cares), 3 improved, transistors 4009 (3428s)
+  pass 1: 900 windows (558 with don't-cares), 3 improved, transistors 4009 (3615s)
+  pass 1: 950 windows (589 with don't-cares), 3 improved, transistors 4009 (3806s)
+pass 1 done: 4014 -> 4009 transistors (968 windows, 600 with don't-cares, 3 improved, 2 rejected for loops, 3882s)
+final: 1072 cells, 4009 transistors + 143 flip-flops x 6 = 4867 (INV 328, AOI22 141, NAND2 125, AOI21 78, NOR2 63, OAI221 56, OAI22 50, NOR3 35, OAI21 34, AOI222 29, AOI211 19, AOI31 17, AOI32 15, NAND3 15, OAI32 13, OAI211 11, NOR4 10, AOI221 9, OAI31 9, NAND4 5, NOR5 3, NOR6 2, OAI222 2, NOR8 1, AOI33 1, NOR7 1)
+saved build\cells_opt.json and build\cells_opt_gates.json; validate with: python src/csim.py --netlist build\cells_opt_gates.json
+netlist: 2937 gates (AND 981, NOT 1072, OR 884), 143 flip-flops, 3144 signals
+compiled in 9.8s -> build\sim_cells_opt.exe
+PASS cycles=96241383  (498.9s)

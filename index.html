@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6502 Evolution Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Independent learning experiment</p>
+    <h1>Evolving the logic gates of a <span>6502</span></h1>
+    <p class="lede">A public laboratory for genetic algorithms and digital logic: first evolve small circuits from scratch, then use evolution to shrink the logic of a working 6502.</p>
+  </header>
+
+  <main>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#experiment">Experiment</a><a href="#model">Approach</a><a href="#genetics">Genetics</a><a href="#roadmap">Roadmap</a><a href="#docs">Documentation</a>
+    </nav>
+
+    <section id="experiment" class="card">
+      <div class="section-heading">
+        <div><p class="eyebrow">Browser demo</p><h2>Evolution sandbox</h2></div>
+        <button id="run" type="button">Run 10 generations</button>
+      </div>
+      <p class="notice"><strong>Prototype only:</strong> this browser demo evolves an abstract bit string to illustrate selection, crossover and mutation. It is not a logic-gate netlist. The real gate-level evolution runs in Python (<code>src/evolve_circuit.py</code>, see the README).</p>
+      <div class="metrics">
+        <div><span>Generation</span><strong id="generation">0</strong></div>
+        <div><span>Best fitness</span><strong id="fitness">0%</strong></div>
+        <div><span>Population</span><strong>40</strong></div>
+      </div>
+      <canvas id="chart" width="900" height="240" aria-label="Fitness history chart"></canvas>
+      <div id="population" class="population"></div>
+    </section>
+
+    <section id="model" class="grid">
+      <article class="card"><p class="eyebrow">Why not from random?</p><h2>A CPU has no gentle slope</h2><p>A random netlist executes no instructions, and neither do its mutants, so there is almost no partial credit for evolution to climb. In research on evolving circuits from scratch, progress stalls at about the size of a 4×4-bit multiplier. The 6502 has roughly 3,500 transistors and many internal states.</p></article>
+      <article class="card"><p class="eyebrow">What does work</p><h2>Seed, then shrink</h2><p>Start from a <em>correct</em> 6502 netlist, keep the registers fixed, and evolve only the combinational logic between them. Each block is checked exhaustively or with a SAT-based equivalence checker, so evolution can only remove gates, never break behaviour. Published work using this method has cut gate counts by tens of percent.</p></article>
+    </section>
+
+    <section id="genetics" class="card">
+      <p class="eyebrow">The loop</p><h2>Selection → variation → fitness</h2>
+      <ol class="steps"><li><strong>Encode</strong><span>Each candidate is a netlist of AND/OR/XOR/NAND/NOR/XNOR/NOT gates (Cartesian Genetic Programming).</span></li><li><strong>Simulate</strong><span>Evaluate every input combination at once, bit-parallel, so fitness is exact rather than sampled.</span></li><li><strong>Score</strong><span>Correct output bits first; only once fully correct, fewer gates wins.</span></li><li><strong>Vary</strong><span>One parent, four mutated children per generation; unused gates drift freely.</span></li><li><strong>Repeat</strong><span>Once fully correct, the circuit can only stay correct while getting smaller.</span></li></ol>
+    </section>
+
+    <section id="roadmap" class="card">
+      <p class="eyebrow">Long-term plan</p><h2>Milestones</h2>
+      <div class="timeline">
+        <div><b>01</b><h3>Small blocks</h3><p>Evolve adders and a 4-bit ALU slice from random gates and from hand-built seeds. <em>Running: a 4-bit adder has been evolved from random gates.</em></p></div>
+        <div><b>02</b><h3>Real 6502 netlist</h3><p>Synthesise an existing Verilog 6502 to gates with Yosys. <em>Done: 3,026 gates and 143 flip-flops; passes Klaus Dormann's full functional test.</em></p></div>
+        <div><b>03</b><h3>Cut at registers</h3><p>Cutting at the registers proved too coarse (most logic is shared), so instead small windows of ≤ 10 inputs are cut out anywhere in the netlist. <em>Done.</em></p></div>
+        <div><b>04</b><h3>Seeded optimisation</h3><p>Shrink each window with evolution, checked on every input combination. <em>Result: the ABC-optimised 6502 (2,075 gates) was shrunk further to 2,021 gates and still passes the full functional test, mostly thanks to SAT don't-cares (input combinations no CPU state can produce). But ABC itself also improves when rerun: iterated, it plateaus around 1,994 gates. Against that fairer baseline, window evolution with don't-cares still removes another 26 gates (1,994 → 1,968, −1.3%), still passing the full functional test. Register-state don't-cares (322 SAT-proven invariants about which flip-flop combinations can occur) took it to 1,963 (−1.6%). <b>Correction:</b> ABC's slower <code>&amp;deepsyn</code> search reaches 1,896 gates in 2 minutes (passes the test) and 1,865 in 10. Measured against that, window evolution does not beat ABC.</em></p></div>
+        <div><b>05</b><h3>Versus 1975</h3><p>Compare with the real 6502's transistor netlist (visual6502). <em>Result: counted in NMOS transistors, the best automated design (ABC with <code>&amp;deepsyn</code> and <code>amap</code>, plus evolution) needs 4,867 transistors; the hand-drawn original needs 4,306. MOS wins by about 13% (first measured as 36% with weaker ABC settings), thanks to pass transistors, precharged buses and the decode PLA. Evolving with a transistor cost instead of gates helps a little (5,918 → 5,878), but does not beat ABC's own mapping. A mechanical gate-level conversion of the real chip (8,888 gates) passes the full functional test; window CGP + ABC shrinks it 3.6% beyond converged ABC (7,416 → 7,150 gates).</em></p></div>
+        <div><b>06</b><h3>Full-CPU validation</h3><p>Reassemble the blocks and pass Klaus Dormann's 6502 functional test suite.</p></div>
+      </div>
+      <p><strong>Out of scope:</strong> the 6510 (the C64 variant with an on-chip I/O port) and other 6502 variants such as the 6507. The target is the plain 6502 core only.</p>
+    </section>
+
+    <section id="docs" class="card docs">
+      <p class="eyebrow">Read the project notes</p><h2>Documentation</h2>
+      <div class="doc-links">
+        <a href="docs/representation.md">Circuit representation &amp; fitness <span>→</span></a>
+        <a href="docs/real6502.md">Modern tools vs the real 1975 6502 <span>→</span></a>
+        <a href="README.md">Build and run guide <span>→</span></a>
+      </div>
+    </section>
+  </main>
+  <footer><span>6502 Evolution Lab</span><span>Educational experiment, not a replacement processor</span></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Re-optimise one of OUR netlists with ABC (for alternating ABC <-> window CGP).
+# Input: build/reabc_in.v, written by  python src/reabc.py
+# Needs native Yosys from OSS CAD Suite (bin and lib on PATH).
+
+read_verilog build/reabc_in.v
+proc
+opt -nodffe -nosdff
+techmap
+async2sync
+dfflegalize -cell $_DFF_P_ 01
+opt -full -nodffe -nosdff
+
+abc -g AND,NAND,OR,NOR,XOR,XNOR
+opt -full -nodffe -nosdff
+opt_clean -purge
+
+tee -o build/reabc_out.stat stat
+write_json build/reabc_out.json

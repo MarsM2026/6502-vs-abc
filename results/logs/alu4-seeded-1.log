@@ -1,0 +1,140 @@
+target=alu4 inputs=11 outputs=6 vectors=2048 nodes=150 lambda=4 seed=1 start=seeded
+gen        0  evals         1  correct 100.00%  gates   67      0.0s  CORRECT
+gen      292  evals      1169  correct 100.00%  gates   66      0.8s  CORRECT
+gen      411  evals      1645  correct 100.00%  gates   65      1.0s  CORRECT
+gen      598  evals      2393  correct 100.00%  gates   64      1.3s  CORRECT
+gen     1645  evals      6581  correct 100.00%  gates   63      3.2s  CORRECT
+gen     2316  evals      9265  correct 100.00%  gates   62      4.1s  CORRECT
+gen     2614  evals     10457  correct 100.00%  gates   61      4.6s  CORRECT
+gen     5000  evals     20001  correct 100.00%  gates   61      9.7s  CORRECT
+gen     7349  evals     29397  correct 100.00%  gates   60     13.0s  CORRECT
+gen     9110  evals     36441  correct 100.00%  gates   59     15.3s  CORRECT
+gen    10000  evals     40001  correct 100.00%  gates   59     16.4s  CORRECT
+gen    12577  evals     50309  correct 100.00%  gates   58     20.4s  CORRECT
+gen    15000  evals     60001  correct 100.00%  gates   58     23.5s  CORRECT
+gen    20000  evals     80001  correct 100.00%  gates   58     31.0s  CORRECT
+gen    25000  evals    100001  correct 100.00%  gates   58     37.1s  CORRECT
+gen    30000  evals    120001  correct 100.00%  gates   58     44.0s  CORRECT
+gen    35000  evals    140001  correct 100.00%  gates   58     51.4s  CORRECT
+gen    40000  evals    160001  correct 100.00%  gates   58     57.8s  CORRECT
+gen    45000  evals    180001  correct 100.00%  gates   58     64.3s  CORRECT
+gen    50000  evals    200001  correct 100.00%  gates   58     71.6s  CORRECT
+gen    55000  evals    220001  correct 100.00%  gates   58     78.2s  CORRECT
+gen    60000  evals    240001  correct 100.00%  gates   58     84.8s  CORRECT
+gen    65000  evals    260001  correct 100.00%  gates   58     92.2s  CORRECT
+gen    70000  evals    280001  correct 100.00%  gates   58     98.6s  CORRECT
+gen    75000  evals    300001  correct 100.00%  gates   58    105.8s  CORRECT
+gen    80000  evals    320001  correct 100.00%  gates   58    113.4s  CORRECT
+gen    85000  evals    340001  correct 100.00%  gates   58    120.5s  CORRECT
+gen    90000  evals    360001  correct 100.00%  gates   58    127.2s  CORRECT
+gen    95000  evals    380001  correct 100.00%  gates   58    134.0s  CORRECT
+gen   100000  evals    400001  correct 100.00%  gates   58    141.6s  CORRECT
+gen   105000  evals    420001  correct 100.00%  gates   58    148.1s  CORRECT
+gen   110000  evals    440001  correct 100.00%  gates   58    154.8s  CORRECT
+gen   115000  evals    460001  correct 100.00%  gates   58    161.9s  CORRECT
+gen   120000  evals    480001  correct 100.00%  gates   58    169.1s  CORRECT
+gen   125000  evals    500001  correct 100.00%  gates   58    176.9s  CORRECT
+gen   130000  evals    520001  correct 100.00%  gates   58    184.2s  CORRECT
+gen   135000  evals    540001  correct 100.00%  gates   58    191.3s  CORRECT
+gen   140000  evals    560001  correct 100.00%  gates   58    197.5s  CORRECT
+gen   145000  evals    580001  correct 100.00%  gates   58    204.8s  CORRECT
+gen   150000  evals    600001  correct 100.00%  gates   58    211.8s  CORRECT
+gen   155000  evals    620001  correct 100.00%  gates   58    218.2s  CORRECT
+gen   160000  evals    640001  correct 100.00%  gates   58    226.8s  CORRECT
+gen   165000  evals    660001  correct 100.00%  gates   58    233.9s  CORRECT
+gen   170000  evals    680001  correct 100.00%  gates   58    240.9s  CORRECT
+gen   175000  evals    700001  correct 100.00%  gates   58    247.1s  CORRECT
+gen   180000  evals    720001  correct 100.00%  gates   58    254.0s  CORRECT
+gen   185000  evals    740001  correct 100.00%  gates   58    261.1s  CORRECT
+gen   190000  evals    760001  correct 100.00%  gates   58    267.4s  CORRECT
+gen   195000  evals    780001  correct 100.00%  gates   58    274.6s  CORRECT
+gen   200000  evals    800001  correct 100.00%  gates   58    281.9s  CORRECT
+gen   205000  evals    820001  correct 100.00%  gates   58    288.4s  CORRECT
+gen   210000  evals    840001  correct 100.00%  gates   58    295.5s  CORRECT
+gen   215000  evals    860001  correct 100.00%  gates   58    302.8s  CORRECT
+gen   220000  evals    880001  correct 100.00%  gates   58    309.3s  CORRECT
+gen   225000  evals    900001  correct 100.00%  gates   58    315.7s  CORRECT
+gen   230000  evals    920001  correct 100.00%  gates   58    322.4s  CORRECT
+gen   235000  evals    940001  correct 100.00%  gates   58    329.4s  CORRECT
+gen   240000  evals    960001  correct 100.00%  gates   58    336.3s  CORRECT
+gen   245000  evals    980001  correct 100.00%  gates   58    343.4s  CORRECT
+gen   250000  evals   1000001  correct 100.00%  gates   58    350.4s  CORRECT
+gen   255000  evals   1020001  correct 100.00%  gates   58    356.8s  CORRECT
+gen   260000  evals   1040001  correct 100.00%  gates   58    363.7s  CORRECT
+gen   265000  evals   1060001  correct 100.00%  gates   58    370.6s  CORRECT
+gen   270000  evals   1080001  correct 100.00%  gates   58    377.0s  CORRECT
+gen   275000  evals   1100001  correct 100.00%  gates   58    383.9s  CORRECT
+gen   280000  evals   1120001  correct 100.00%  gates   58    390.9s  CORRECT
+gen   285000  evals   1140001  correct 100.00%  gates   58    397.5s  CORRECT
+gen   290000  evals   1160001  correct 100.00%  gates   58    404.8s  CORRECT
+gen   295000  evals   1180001  correct 100.00%  gates   58    412.3s  CORRECT
+gen   300000  evals   1200001  correct 100.00%  gates   58    419.6s  CORRECT
+
+First correct circuit at generation 0; final size 58 gates.
+
+g0 = NOT(op0)
+g1 = NOT(op1)
+g2 = XOR(a0, b0)
+g3 = AND(a0, b0)
+g5 = XOR(g2, cin)
+g6 = AND(g2, cin)
+g8 = AND(op0, g3)
+g9 = AND(g0, g5)
+g10 = OR(g8, g9)
+g11 = OR(g3, g6)
+g12 = AND(g0, g11)
+g13 = OR(g2, g12)
+g14 = AND(op1, g13)
+g15 = AND(g1, g10)
+g16 = XOR(g14, g15)
+g17 = XOR(a1, b1)
+g18 = AND(a1, b1)
+g20 = XOR(g17, g11)
+g21 = AND(g17, g12)
+g22 = OR(g18, g21)
+g23 = AND(op0, g22)
+g24 = AND(g0, g20)
+g25 = XOR(g23, g24)
+g27 = AND(g0, b1)
+g28 = OR(g17, g27)
+g29 = AND(op1, g28)
+g30 = AND(g1, g25)
+g31 = XOR(g29, g30)
+g32 = XOR(a2, b2)
+g33 = AND(a2, b2)
+g35 = XOR(g32, g22)
+g36 = AND(g32, g22)
+g37 = XOR(g33, g36)
+g38 = AND(op0, g33)
+g39 = AND(g0, g35)
+g40 = OR(g38, g39)
+g42 = AND(g0, g33)
+g43 = XOR(g32, g42)
+g44 = AND(op1, g43)
+g45 = AND(g1, g40)
+g46 = XOR(g44, g45)
+g47 = XOR(a3, b3)
+g48 = AND(a3, b3)
+g49 = OR(g47, g48)
+g50 = XOR(g49, g37)
+g51 = AND(g47, g37)
+g52 = XOR(g48, g51)
+g54 = AND(g0, g50)
+g55 = XOR(g48, g54)
+g57 = AND(g0, g52)
+g58 = OR(g47, g57)
+g59 = AND(op1, g58)
+g60 = AND(g1, g55)
+g61 = OR(g59, g60)
+g64 = OR(g16, g31)
+g65 = OR(g46, g61)
+g66 = NOR(g64, g65)
+g85 = AND(g57, g1)
+r0 = g16
+r1 = g31
+r2 = g46
+r3 = g61
+c = g85
+z = g66
+
+Saved results/alu4-seeded-1.v and results/alu4-seeded-1.json

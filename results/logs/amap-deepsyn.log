@@ -1,0 +1,12 @@
+cpu_seqdc_deep600_it1 amap,-F,8,-A,16 4909
+cpu_seqdc_deep600_it1 struct+amap,-F,8,-A,16 4973
+cpu_seqdc_deep600_it1 amap,-F,16,-A,32 4910
+cpu_seqdc_deep600_it1 struct+amap,-F,16,-A,32 4973
+cpu_seqdc_deep600_it3 amap,-F,8,-A,16 4872
+cpu_seqdc_deep600_it3 struct+amap,-F,8,-A,16 4987
+cpu_seqdc_deep600_it3 amap,-F,16,-A,32 4875
+cpu_seqdc_deep600_it3 struct+amap,-F,16,-A,32 4987
+cpu_abc_x10_deep600_it2 amap,-F,8,-A,16 4934
+cpu_abc_x10_deep600_it2 struct+amap,-F,8,-A,16 4992
+cpu_abc_x10_deep600_it2 amap,-F,16,-A,32 4921
+cpu_abc_x10_deep600_it2 struct+amap,-F,16,-A,32 4992

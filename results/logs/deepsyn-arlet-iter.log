@@ -1,0 +1,9 @@
+cpu_abc_x10_deep600 iter 1: 1855
+cpu_seqdc_deep600 iter 1: 1822
+cpu_abc_x10_deep600 iter 2: 1837
+cpu_seqdc_deep600 iter 2: 1829
+cpu_abc_x10_deep600 iter 3: 1844
+cpu_seqdc_deep600 iter 3: 1825
+PASS cycles=96241383  (897.6s)
+cpu_seqdc_deep600_it1: PASS cycles=96241383  (979.4s)
+cpu_abc_x10_deep600_it2: PASS cycles=96241383  (439.7s)

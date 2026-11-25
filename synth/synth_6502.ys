@@ -1,0 +1,25 @@
+# Synthesise Arlet Ottens' verilog-6502 to a flat gate-level netlist plus plain
+# positive-edge D flip-flops.
+#
+# Run from the project root:  yowasp-yosys -s synth/synth_6502.ys
+#
+# NOTE: ABC (Yosys' logic optimiser / technology mapper) silently crashes in the
+# yowasp-yosys WebAssembly build on this machine (0.70 and 0.71), so this flow
+# uses -noabc. Output cells are $_AND_/$_OR_/$_XOR_/$_NOT_/$_MUX_ (and friends);
+# src/netlist.py expands them into the CGP gate set. The result is correct but
+# less optimised than an ABC-mapped netlist.
+
+read_verilog vendor/verilog-6502/ALU.v vendor/verilog-6502/cpu.v
+synth -top cpu -flatten -noabc
+
+# The state register has an async reset; make it synchronous so every
+# flip-flop is a plain D flip-flop (reset is held for several cycles anyway).
+async2sync
+# Turn enable / sync-reset flip-flops into plain DFFs with logic in front.
+dfflegalize -cell $_DFF_P_ 01
+techmap
+opt -full -nodffe -nosdff
+opt_clean -purge
+
+tee -o build/cpu_gates.stat stat
+write_json build/cpu_gates.json

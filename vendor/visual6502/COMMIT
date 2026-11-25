@@ -1,0 +1,5 @@
+Source: https://github.com/trebonian/visual6502
+Commit: d8ecc129b34e0eaf320e0400fcf33329475bdb1e (downloaded 2026-11-24)
+Files: nodenames.js (MIT, Copyright (c) 2010 Brian Silverman, Barry Silverman, Ed Spittles,
+Segher Boessenkool), transdefs.js, README (see that repository for their licences).
+Used as data only: node names for src/nmos.py.

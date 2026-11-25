@@ -1,0 +1,5 @@
+deep 2 (T=300): out: 4934 gates (AND 1491, NAND 2262, NOR 423, NOT 153, OR 583, XNOR 15, XOR 7), 454 flip-flop
+deep 3 (T=300): out: 4790 gates (AND 1459, NAND 2105, NOR 425, NOT 155, OR 624, XNOR 17, XOR 5), 451 flip-flop
+deep 4 (T=300): out: 4769 gates (AND 1447, NAND 2108, NOR 409, NOT 156, OR 626, XNOR 18, XOR 5), 450 flip-flop
+deep 5 (T=300): out: 4750 gates (AND 1430, NAND 2114, NOR 413, NOT 154, OR 619, XNOR 15, XOR 5), 450 flip-flop
+deep 6 (T=300): out: 4721 gates (AND 1431, NAND 2087, NOR 400, NOT 152, OR 632, XNOR 15, XOR 4), 446 flip-flop

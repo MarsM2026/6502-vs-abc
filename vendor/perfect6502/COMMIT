@@ -1,0 +1,13 @@
+Source: https://github.com/mist64/perfect6502
+Commit: 09fc542877a84318291aa42dab143a3e2c3db974 (downloaded 2026-11-24)
+Files: netlist_6502.h, netlist_sim.c, netlist_sim.h, perfect6502.c, perfect6502.h, types.h, README.md, LICENSE
+
+Licences:
+- netlist_6502.h (the transistor netlist data): Copyright (c) 2010 Greg James, Brian
+  Silverman, Barry Silverman, www.visual6502.org. Creative Commons
+  Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0).
+  Non-commercial use only; credit Greg James and www.visual6502.org.
+- perfect6502 code (netlist_sim.c): MIT, see LICENSE.
+
+netlist_6502.h is parsed by src/nmos.py and src/real6502.py. The C files are compiled only
+into the reference harness tools/ref6502/klaus_ref.c (build/klaus_ref.exe).

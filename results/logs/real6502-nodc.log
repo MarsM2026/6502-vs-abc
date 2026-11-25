@@ -1,0 +1,28 @@
+start:         7705 gates (AND 2542, NAND 3571, NOR 820, NOT 149, OR 597, XNOR 22, XOR 4), 527 flip-flops, 8249 signals
+after cleanup: 7705 gates (AND 2542, NAND 3571, NOR 820, NOT 149, OR 597, XNOR 22, XOR 4), 527 flip-flops, 8249 signals
+estimated NMOS transistors (combinational, nmos_cost model): 19780
+settings: k=12 max_gates=30 gens=2000 dont_cares=False invariants=0 cost=gates
+  pass 1: 50 windows (0 with don't-cares), 0 improved, gates 7705 (252s)
+  pass 1: 100 windows (0 with don't-cares), 0 improved, gates 7705 (472s)
+  pass 1: 150 windows (0 with don't-cares), 0 improved, gates 7705 (684s)
+  pass 1: 200 windows (0 with don't-cares), 0 improved, gates 7705 (868s)
+  pass 1: 250 windows (0 with don't-cares), 2 improved, gates 7702 (1055s)
+  pass 1: 300 windows (0 with don't-cares), 2 improved, gates 7702 (1230s)
+  pass 1: 350 windows (0 with don't-cares), 2 improved, gates 7702 (1428s)
+  pass 1: 400 windows (0 with don't-cares), 3 improved, gates 7701 (1657s)
+  pass 1: 450 windows (0 with don't-cares), 4 improved, gates 7700 (1794s)
+  pass 1: 500 windows (0 with don't-cares), 4 improved, gates 7700 (1954s)
+  pass 1: 550 windows (0 with don't-cares), 4 improved, gates 7700 (2452s)
+  pass 1: 600 windows (0 with don't-cares), 4 improved, gates 7700 (2773s)
+  pass 1: 650 windows (0 with don't-cares), 4 improved, gates 7700 (3151s)
+  pass 1: 700 windows (0 with don't-cares), 6 improved, gates 7696 (3470s)
+  pass 1: 750 windows (0 with don't-cares), 6 improved, gates 7696 (3568s)
+  pass 1: 800 windows (0 with don't-cares), 6 improved, gates 7696 (3661s)
+  pass 1: 850 windows (0 with don't-cares), 6 improved, gates 7696 (3771s)
+  pass 1: 900 windows (0 with don't-cares), 6 improved, gates 7696 (3888s)
+  pass 1: 950 windows (0 with don't-cares), 6 improved, gates 7696 (3995s)
+  pass 1: 1000 windows (0 with don't-cares), 6 improved, gates 7696 (4101s)
+pass 1 done: 7705 -> 7696 gates (1000 windows, 0 with don't-cares, 6 improved, 0 rejected for loops, 4101s)
+final:         7696 gates (AND 2539, NAND 3564, NOR 819, NOT 148, OR 594, XNOR 22, XOR 10), 527 flip-flops, 8357 signals
+estimated NMOS transistors (combinational, nmos_cost model): 19806
+saved build\real6502_nodc.json; validate with: python src/csim.py --netlist build\real6502_nodc.json

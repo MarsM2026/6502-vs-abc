@@ -1,0 +1,181 @@
+target=adder4 inputs=9 outputs=5 vectors=512 nodes=100 lambda=4 seed=2 start=random
+gen        0  evals         1  correct  46.25%  gates    0      0.0s
+gen        1  evals         5  correct  53.75%  gates    0      0.0s
+gen       19  evals        77  correct  56.25%  gates    0      0.0s
+gen       92  evals       369  correct  56.88%  gates    0      0.1s
+gen       94  evals       377  correct  57.66%  gates    0      0.1s
+gen       97  evals       389  correct  57.81%  gates    0      0.1s
+gen      103  evals       413  correct  58.05%  gates    0      0.1s
+gen      119  evals       477  correct  58.12%  gates    0      0.1s
+gen      204  evals       817  correct  59.38%  gates    0      0.2s
+gen      219  evals       877  correct  60.00%  gates    0      0.2s
+gen      235  evals       941  correct  60.62%  gates    0      0.3s
+gen      267  evals      1069  correct  61.88%  gates    0      0.3s
+gen      274  evals      1097  correct  62.50%  gates    0      0.3s
+gen      279  evals      1117  correct  62.81%  gates    0      0.3s
+gen      280  evals      1121  correct  62.97%  gates    0      0.3s
+gen      288  evals      1153  correct  65.47%  gates    0      0.3s
+gen      292  evals      1169  correct  65.78%  gates    0      0.3s
+gen      293  evals      1173  correct  66.41%  gates    0      0.3s
+gen      321  evals      1285  correct  68.91%  gates    0      0.3s
+gen      330  evals      1321  correct  70.16%  gates    0      0.4s
+gen      338  evals      1353  correct  72.66%  gates    0      0.4s
+gen      349  evals      1397  correct  77.66%  gates    0      0.4s
+gen      395  evals      1581  correct  78.91%  gates    0      0.4s
+gen      610  evals      2441  correct  80.78%  gates    0      0.7s
+gen      679  evals      2717  correct  81.25%  gates    0      0.7s
+gen     1027  evals      4109  correct  83.75%  gates    0      1.1s
+gen     1730  evals      6921  correct  83.98%  gates    0      1.7s
+gen     1876  evals      7505  correct  84.06%  gates    0      1.8s
+gen     1906  evals      7625  correct  84.69%  gates    0      1.9s
+gen     2076  evals      8305  correct  85.31%  gates    0      2.0s
+gen     3788  evals     15153  correct  86.88%  gates    0      3.4s
+gen     5000  evals     20001  correct  86.88%  gates    0      4.4s
+gen     7696  evals     30785  correct  88.91%  gates    0      7.8s
+gen     7832  evals     31329  correct  89.22%  gates    0      7.9s
+gen     7845  evals     31381  correct  90.47%  gates    0      8.0s
+gen     7862  evals     31449  correct  90.94%  gates    0      8.0s
+gen     9491  evals     37965  correct  92.19%  gates    0     10.3s
+gen     9516  evals     38065  correct  93.44%  gates    0     10.3s
+gen    10000  evals     40001  correct  93.44%  gates    0     11.0s
+gen    15000  evals     60001  correct  93.44%  gates    0     17.4s
+gen    20000  evals     80001  correct  93.44%  gates    0     22.1s
+gen    25000  evals    100001  correct  93.44%  gates    0     28.6s
+gen    30000  evals    120001  correct  93.44%  gates    0     33.3s
+gen    35000  evals    140001  correct  93.44%  gates    0     38.5s
+gen    40000  evals    160001  correct  93.44%  gates    0     42.9s
+gen    45000  evals    180001  correct  93.44%  gates    0     48.9s
+gen    50000  evals    200001  correct  93.44%  gates    0     52.9s
+gen    55000  evals    220001  correct  93.44%  gates    0     57.5s
+gen    60000  evals    240001  correct  93.44%  gates    0     61.2s
+gen    65000  evals    260001  correct  93.44%  gates    0     65.2s
+gen    67727  evals    270909  correct  93.52%  gates    0     68.0s
+gen    67767  evals    271069  correct  93.59%  gates    0     68.1s
+gen    69896  evals    279585  correct  93.67%  gates    0     70.0s
+gen    70000  evals    280001  correct  93.67%  gates    0     70.1s
+gen    75000  evals    300001  correct  93.67%  gates    0     74.6s
+gen    75565  evals    302261  correct  93.91%  gates    0     75.4s
+gen    80000  evals    320001  correct  93.91%  gates    0     79.9s
+gen    81957  evals    327829  correct  94.06%  gates    0     81.4s
+gen    85000  evals    340001  correct  94.06%  gates    0     84.2s
+gen    90000  evals    360001  correct  94.06%  gates    0     89.9s
+gen    93184  evals    372737  correct  94.38%  gates    0     93.0s
+gen    93639  evals    374557  correct  94.69%  gates    0     93.3s
+gen    93704  evals    374817  correct  95.31%  gates    0     93.3s
+gen    93741  evals    374965  correct  95.47%  gates    0     93.3s
+gen    93885  evals    375541  correct  95.62%  gates    0     93.5s
+gen    95000  evals    380001  correct  95.62%  gates    0     94.4s
+gen   100000  evals    400001  correct  95.62%  gates    0    100.6s
+gen   104927  evals    419709  correct  95.78%  gates    0    105.6s
+gen   104945  evals    419781  correct  96.88%  gates    0    105.6s
+gen   105000  evals    420001  correct  96.88%  gates    0    105.7s
+gen   105304  evals    421217  correct  97.81%  gates    0    106.0s
+gen   105540  evals    422161  correct  98.75%  gates    0    106.3s
+gen   110000  evals    440001  correct  98.75%  gates    0    110.5s
+gen   115000  evals    460001  correct  98.75%  gates    0    116.0s
+gen   120000  evals    480001  correct  98.75%  gates    0    120.6s
+gen   123628  evals    494513  correct  99.38%  gates    0    123.7s
+gen   123656  evals    494625  correct  99.69%  gates    0    123.7s
+gen   123683  evals    494733  correct 100.00%  gates   36    123.7s  CORRECT
+gen   123696  evals    494785  correct 100.00%  gates   35    123.7s  CORRECT
+gen   123944  evals    495777  correct 100.00%  gates   34    124.0s  CORRECT
+gen   123956  evals    495825  correct 100.00%  gates   33    124.0s  CORRECT
+gen   125000  evals    500001  correct 100.00%  gates   33    124.8s  CORRECT
+gen   125086  evals    500345  correct 100.00%  gates   32    124.9s  CORRECT
+gen   127920  evals    511681  correct 100.00%  gates   31    128.3s  CORRECT
+gen   130000  evals    520001  correct 100.00%  gates   31    130.0s  CORRECT
+gen   130346  evals    521385  correct 100.00%  gates   30    130.3s  CORRECT
+gen   131738  evals    526953  correct 100.00%  gates   29    131.4s  CORRECT
+gen   135000  evals    540001  correct 100.00%  gates   29    134.2s  CORRECT
+gen   140000  evals    560001  correct 100.00%  gates   29    139.4s  CORRECT
+gen   142286  evals    569145  correct 100.00%  gates   28    141.0s  CORRECT
+gen   145000  evals    580001  correct 100.00%  gates   28    143.4s  CORRECT
+gen   150000  evals    600001  correct 100.00%  gates   28    148.5s  CORRECT
+gen   155000  evals    620001  correct 100.00%  gates   28    153.2s  CORRECT
+gen   160000  evals    640001  correct 100.00%  gates   28    157.9s  CORRECT
+gen   165000  evals    660001  correct 100.00%  gates   28    162.1s  CORRECT
+gen   170000  evals    680001  correct 100.00%  gates   28    167.4s  CORRECT
+gen   175000  evals    700001  correct 100.00%  gates   28    171.3s  CORRECT
+gen   180000  evals    720001  correct 100.00%  gates   28    175.8s  CORRECT
+gen   185000  evals    740001  correct 100.00%  gates   28    180.4s  CORRECT
+gen   190000  evals    760001  correct 100.00%  gates   28    184.5s  CORRECT
+gen   195000  evals    780001  correct 100.00%  gates   28    189.6s  CORRECT
+gen   200000  evals    800001  correct 100.00%  gates   28    194.9s  CORRECT
+gen   205000  evals    820001  correct 100.00%  gates   28    200.1s  CORRECT
+gen   210000  evals    840001  correct 100.00%  gates   28    203.7s  CORRECT
+gen   215000  evals    860001  correct 100.00%  gates   28    207.8s  CORRECT
+gen   220000  evals    880001  correct 100.00%  gates   28    211.1s  CORRECT
+gen   225000  evals    900001  correct 100.00%  gates   28    214.3s  CORRECT
+gen   230000  evals    920001  correct 100.00%  gates   28    218.3s  CORRECT
+gen   235000  evals    940001  correct 100.00%  gates   28    221.6s  CORRECT
+gen   240000  evals    960001  correct 100.00%  gates   28    224.9s  CORRECT
+gen   245000  evals    980001  correct 100.00%  gates   28    229.1s  CORRECT
+gen   250000  evals   1000001  correct 100.00%  gates   28    232.9s  CORRECT
+gen   255000  evals   1020001  correct 100.00%  gates   28    236.9s  CORRECT
+gen   260000  evals   1040001  correct 100.00%  gates   28    240.2s  CORRECT
+gen   265000  evals   1060001  correct 100.00%  gates   28    243.8s  CORRECT
+gen   270000  evals   1080001  correct 100.00%  gates   28    247.8s  CORRECT
+gen   275000  evals   1100001  correct 100.00%  gates   28    250.9s  CORRECT
+gen   280000  evals   1120001  correct 100.00%  gates   28    254.4s  CORRECT
+gen   285000  evals   1140001  correct 100.00%  gates   28    258.5s  CORRECT
+gen   290000  evals   1160001  correct 100.00%  gates   28    261.6s  CORRECT
+gen   295000  evals   1180001  correct 100.00%  gates   28    265.0s  CORRECT
+gen   300000  evals   1200001  correct 100.00%  gates   28    269.1s  CORRECT
+gen   305000  evals   1220001  correct 100.00%  gates   28    272.5s  CORRECT
+gen   310000  evals   1240001  correct 100.00%  gates   28    276.5s  CORRECT
+gen   315000  evals   1260001  correct 100.00%  gates   28    279.8s  CORRECT
+gen   320000  evals   1280001  correct 100.00%  gates   28    283.2s  CORRECT
+gen   325000  evals   1300001  correct 100.00%  gates   28    287.2s  CORRECT
+gen   330000  evals   1320001  correct 100.00%  gates   28    290.6s  CORRECT
+gen   335000  evals   1340001  correct 100.00%  gates   28    293.8s  CORRECT
+gen   340000  evals   1360001  correct 100.00%  gates   28    297.9s  CORRECT
+gen   345000  evals   1380001  correct 100.00%  gates   28    301.4s  CORRECT
+gen   350000  evals   1400001  correct 100.00%  gates   28    304.6s  CORRECT
+gen   355000  evals   1420001  correct 100.00%  gates   28    308.5s  CORRECT
+gen   360000  evals   1440001  correct 100.00%  gates   28    311.9s  CORRECT
+gen   365000  evals   1460001  correct 100.00%  gates   28    315.7s  CORRECT
+gen   370000  evals   1480001  correct 100.00%  gates   28    319.3s  CORRECT
+gen   375000  evals   1500001  correct 100.00%  gates   28    322.5s  CORRECT
+gen   380000  evals   1520001  correct 100.00%  gates   28    326.4s  CORRECT
+gen   385000  evals   1540001  correct 100.00%  gates   28    329.8s  CORRECT
+gen   390000  evals   1560001  correct 100.00%  gates   28    333.5s  CORRECT
+gen   395000  evals   1580001  correct 100.00%  gates   28    337.6s  CORRECT
+gen   400000  evals   1600001  correct 100.00%  gates   28    340.6s  CORRECT
+
+First correct circuit at generation 123683; final size 28 gates.
+
+g0 = XOR(b3, a3)
+g1 = XNOR(b0, cin)
+g2 = XOR(a0, g1)
+g4 = XOR(a2, b2)
+g7 = NOR(g4, b2)
+g10 = OR(b3, g0)
+g11 = NAND(cin, b0)
+g12 = NAND(b1, a1)
+g15 = NOT(g2)
+g16 = NOT(g12)
+g17 = XNOR(g16, g4)
+g19 = NAND(g15, g11)
+g20 = XNOR(b1, a1)
+g23 = NOR(g1, g15)
+g25 = NOR(g20, g17)
+g26 = AND(g12, g4)
+g28 = NOR(g26, g7)
+g32 = OR(b0, a0)
+g33 = AND(g25, g19)
+g34 = NAND(g32, g33)
+g40 = XOR(g34, g0)
+g43 = XNOR(g40, g28)
+g45 = XOR(g23, g11)
+g51 = NOR(g45, g20)
+g55 = XNOR(g51, g17)
+g60 = XOR(g45, g20)
+g62 = NAND(g0, g43)
+g70 = XNOR(g10, g62)
+s0 = g15
+s1 = g60
+s2 = g55
+s3 = g43
+cout = g70
+
+Saved results/adder4-random-2.v and results/adder4-random-2.json

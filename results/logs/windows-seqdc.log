@@ -1,0 +1,47 @@
+start:         1968 gates (AND 601, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 49, XOR 48), 143 flip-flops, 2708 signals
+after cleanup: 1968 gates (AND 601, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 49, XOR 48), 143 flip-flops, 2708 signals
+settings: k=15 max_gates=50 gens=2000 dont_cares=True invariants=322
+  pass 1: 50 windows (25 with don't-cares), 0 improved, gates 1968 (399s)
+  pass 1: 100 windows (59 with don't-cares), 1 improved, gates 1967 (1234s)
+  pass 1: 150 windows (92 with don't-cares), 1 improved, gates 1967 (1823s)
+  pass 1: 200 windows (131 with don't-cares), 2 improved, gates 1966 (2772s)
+  pass 1: 250 windows (164 with don't-cares), 2 improved, gates 1966 (3266s)
+  pass 1: 300 windows (194 with don't-cares), 2 improved, gates 1966 (3582s)
+  pass 1: 350 windows (228 with don't-cares), 3 improved, gates 1965 (3791s)
+  pass 1: 400 windows (265 with don't-cares), 3 improved, gates 1965 (4044s)
+  pass 1: 450 windows (304 with don't-cares), 3 improved, gates 1965 (4344s)
+  pass 1: 500 windows (334 with don't-cares), 3 improved, gates 1965 (4576s)
+  pass 1: 550 windows (361 with don't-cares), 3 improved, gates 1965 (4925s)
+  pass 1: 600 windows (394 with don't-cares), 3 improved, gates 1965 (5404s)
+  pass 1: 650 windows (424 with don't-cares), 4 improved, gates 1964 (5648s)
+  pass 1: 700 windows (456 with don't-cares), 4 improved, gates 1964 (6040s)
+  pass 1: 750 windows (491 with don't-cares), 4 improved, gates 1964 (6283s)
+  pass 1: 800 windows (524 with don't-cares), 4 improved, gates 1964 (6562s)
+  pass 1: 850 windows (555 with don't-cares), 4 improved, gates 1964 (6954s)
+  pass 1: 900 windows (588 with don't-cares), 4 improved, gates 1964 (7158s)
+  pass 1: 950 windows (619 with don't-cares), 4 improved, gates 1964 (7301s)
+  pass 1: 1000 windows (651 with don't-cares), 4 improved, gates 1964 (7430s)
+  pass 1: 1050 windows (683 with don't-cares), 4 improved, gates 1964 (7552s)
+  pass 1: 1100 windows (718 with don't-cares), 4 improved, gates 1964 (7718s)
+  pass 1: 1150 windows (751 with don't-cares), 5 improved, gates 1963 (7874s)
+  pass 1: 1200 windows (781 with don't-cares), 5 improved, gates 1963 (8044s)
+  pass 1: 1250 windows (811 with don't-cares), 5 improved, gates 1963 (8177s)
+  pass 1: 1300 windows (849 with don't-cares), 5 improved, gates 1963 (8363s)
+  pass 1: 1350 windows (879 with don't-cares), 5 improved, gates 1963 (8517s)
+  pass 1: 1400 windows (910 with don't-cares), 5 improved, gates 1963 (8641s)
+  pass 1: 1450 windows (941 with don't-cares), 5 improved, gates 1963 (8779s)
+  pass 1: 1500 windows (977 with don't-cares), 5 improved, gates 1963 (8928s)
+  pass 1: 1550 windows (1013 with don't-cares), 5 improved, gates 1963 (9061s)
+  pass 1: 1600 windows (1049 with don't-cares), 5 improved, gates 1963 (9216s)
+  pass 1: 1650 windows (1080 with don't-cares), 5 improved, gates 1963 (9334s)
+  pass 1: 1700 windows (1112 with don't-cares), 5 improved, gates 1963 (9470s)
+  pass 1: 1750 windows (1147 with don't-cares), 5 improved, gates 1963 (9587s)
+  pass 1: 1800 windows (1181 with don't-cares), 5 improved, gates 1963 (9723s)
+  pass 1: 1850 windows (1217 with don't-cares), 5 improved, gates 1963 (9861s)
+pass 1 done: 1968 -> 1963 gates (1883 windows, 1240 with don't-cares, 5 improved, 0 rejected for loops, 9919s)
+final:         1963 gates (AND 597, NAND 1022, NOR 39, NOT 33, OR 169, XNOR 52, XOR 51), 143 flip-flops, 2829 signals
+saved build\cpu_seqdc.json; validate with: python src/csim.py --netlist build\cpu_seqdc.json
+invariants still inductive on optimised circuit: 322 / 322
+netlist: 1963 gates (AND 597, NAND 1022, NOR 39, NOT 33, OR 169, XNOR 52, XOR 51), 143 flip-flops, 2829 signals
+compiled in 5.0s -> build\sim_seqdc.exe
+PASS cycles=96241383  (198.9s)

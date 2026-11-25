@@ -1,0 +1,13 @@
+# generated netlists, executables and work files (recreate with the scripts in src/)
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

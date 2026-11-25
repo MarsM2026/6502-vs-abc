@@ -1,0 +1,4 @@
+cpu_abc_x10 T=120: out: 1896 gates (AND 647, NAND 815, NOR 59, NOT 38, OR 299, XNOR 33, XOR 5), 143 flip-flops, 2054 si
+cpu_abc_x10 T=600: out: 1865 gates (AND 600, NAND 828, NOR 66, NOT 51, OR 283, XNOR 31, XOR 6), 143 flip-flops, 2023 si
+cpu_seqdc T=120: out: 1883 gates (AND 598, NAND 977, NOR 45, NOT 50, OR 174, XNOR 33, XOR 6), 143 flip-flops, 2041 si
+cpu_seqdc T=600: out: 1828 gates (AND 592, NAND 807, NOR 58, NOT 48, OR 284, XNOR 32, XOR 7), 143 flip-flops, 1986 si

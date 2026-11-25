@@ -1,0 +1,56 @@
+abc run 1: 1979 gates
+abc run 2: 1979 gates
+abc run 3: 1982 gates
+abc run 4: 1977 gates
+abc run 5: 1980 gates
+abc run 6: 1979 gates
+abc run 7: 1978 gates
+abc run 8: 1981 gates
+best after ABC: build/cpu_abcx10_win.json (1969 gates)
+PASS cycles=96241383  (304.3s)
+start:         1969 gates (AND 600, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 51, XOR 48), 143 flip-flops, 2677 signals
+after cleanup: 1969 gates (AND 600, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 51, XOR 48), 143 flip-flops, 2677 signals
+settings: k=15 max_gates=50 gens=2000 dont_cares=True
+  pass 1: 50 windows (20 with don't-cares), 0 improved, gates 1969 (174s)
+  pass 1: 100 windows (49 with don't-cares), 0 improved, gates 1969 (428s)
+  pass 1: 150 windows (76 with don't-cares), 0 improved, gates 1969 (663s)
+  pass 1: 200 windows (105 with don't-cares), 1 improved, gates 1968 (895s)
+  pass 1: 250 windows (131 with don't-cares), 1 improved, gates 1968 (1063s)
+  pass 1: 300 windows (157 with don't-cares), 1 improved, gates 1968 (1378s)
+  pass 1: 350 windows (177 with don't-cares), 1 improved, gates 1968 (1599s)
+  pass 1: 400 windows (198 with don't-cares), 1 improved, gates 1968 (1873s)
+  pass 1: 450 windows (224 with don't-cares), 1 improved, gates 1968 (2281s)
+  pass 1: 500 windows (248 with don't-cares), 1 improved, gates 1968 (2590s)
+  pass 1: 550 windows (271 with don't-cares), 1 improved, gates 1968 (2843s)
+  pass 1: 600 windows (294 with don't-cares), 1 improved, gates 1968 (3019s)
+  pass 1: 650 windows (321 with don't-cares), 1 improved, gates 1968 (3230s)
+  pass 1: 700 windows (349 with don't-cares), 1 improved, gates 1968 (3463s)
+  pass 1: 750 windows (374 with don't-cares), 1 improved, gates 1968 (3677s)
+  pass 1: 800 windows (399 with don't-cares), 1 improved, gates 1968 (3957s)
+  pass 1: 850 windows (421 with don't-cares), 1 improved, gates 1968 (4122s)
+  pass 1: 900 windows (442 with don't-cares), 1 improved, gates 1968 (4312s)
+  pass 1: 950 windows (464 with don't-cares), 1 improved, gates 1968 (4519s)
+  pass 1: 1000 windows (492 with don't-cares), 1 improved, gates 1968 (4632s)
+  pass 1: 1050 windows (515 with don't-cares), 1 improved, gates 1968 (4827s)
+  pass 1: 1100 windows (539 with don't-cares), 1 improved, gates 1968 (4956s)
+  pass 1: 1150 windows (568 with don't-cares), 1 improved, gates 1968 (5146s)
+  pass 1: 1200 windows (589 with don't-cares), 1 improved, gates 1968 (5263s)
+  pass 1: 1250 windows (617 with don't-cares), 1 improved, gates 1968 (5451s)
+  pass 1: 1300 windows (644 with don't-cares), 1 improved, gates 1968 (5614s)
+  pass 1: 1350 windows (675 with don't-cares), 1 improved, gates 1968 (5967s)
+  pass 1: 1400 windows (697 with don't-cares), 1 improved, gates 1968 (6188s)
+  pass 1: 1450 windows (721 with don't-cares), 1 improved, gates 1968 (6457s)
+  pass 1: 1500 windows (744 with don't-cares), 1 improved, gates 1968 (6732s)
+  pass 1: 1550 windows (771 with don't-cares), 1 improved, gates 1968 (7087s)
+  pass 1: 1600 windows (795 with don't-cares), 1 improved, gates 1968 (7461s)
+  pass 1: 1650 windows (819 with don't-cares), 1 improved, gates 1968 (7996s)
+  pass 1: 1700 windows (842 with don't-cares), 1 improved, gates 1968 (8377s)
+  pass 1: 1750 windows (862 with don't-cares), 1 improved, gates 1968 (8496s)
+  pass 1: 1800 windows (887 with don't-cares), 1 improved, gates 1968 (8674s)
+  pass 1: 1850 windows (912 with don't-cares), 1 improved, gates 1968 (8857s)
+pass 1 done: 1969 -> 1968 gates (1864 windows, 920 with don't-cares, 1 improved, 0 rejected for loops, 8878s)
+final:         1968 gates (AND 601, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 49, XOR 48), 143 flip-flops, 2708 signals
+saved build\cpu_round3.json; validate with: python src/csim.py --netlist build\cpu_round3.json
+netlist: 1968 gates (AND 601, NAND 1027, NOR 39, NOT 33, OR 171, XNOR 49, XOR 48), 143 flip-flops, 2708 signals
+compiled in 5.3s -> build\sim_round3.exe
+PASS cycles=96241383  (198.8s)

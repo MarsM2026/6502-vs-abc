@@ -1,0 +1,6 @@
+start:         7150 gates (AND 2350, NAND 3338, NOR 705, NOT 144, OR 581, XNOR 26, XOR 6), 513 flip-flops, 7680 signals
+after cleanup: 7150 gates (AND 2350, NAND 3338, NOR 705, NOT 144, OR 581, XNOR 26, XOR 6), 513 flip-flops, 7680 signals
+estimated NMOS transistors (combinational, nmos_cost model): 18632
+settings: k=12 max_gates=30 gens=2000 dont_cares=True invariants=0 cost=gates
+  pass 1: 50 windows (36 with don't-cares), 1 improved, gates 7149 (1980s)
+  pass 1: 100 windows (76 with don't-cares), 3 improved, gates 7147 (3245s)

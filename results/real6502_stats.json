@@ -1,0 +1,23 @@
+{
+ "nodes": 1725,
+ "transistors (enhancement)": 3288,
+ "depletion pull-ups": 1018,
+ "static gates": 1018,
+ "  transistors in pull-down networks": 2242,
+ "  two-input-gate equivalent": 1769,
+ "pass transistors": 622,
+ "transistors to VCC (drivers)": 178,
+ "pulled-up nodes without pull-down": 0,
+ "unclassified transistors (touch GND, not in a gate)": 246,
+ "fanin": {
+  "1": 545,
+  "2": 206,
+  "3": 99,
+  "4": 44,
+  "5": 36,
+  "6": 24,
+  "7": 28,
+  "8": 32,
+  "9": 4
+ }
+}

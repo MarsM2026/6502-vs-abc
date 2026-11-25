@@ -1,0 +1,27 @@
+module adder4(input a0, input a1, input a2, input a3, input b0, input b1, input b2, input b3, input cin, output s0, output s1, output s2, output s3, output cout);
+  wire g0 = a0 ^ b0;
+  wire g1 = g0 ^ cin;
+  wire g2 = a0 & b0;
+  wire g3 = g0 & cin;
+  wire g4 = g2 | g3;
+  wire g5 = a1 ^ b1;
+  wire g6 = g5 ^ g4;
+  wire g7 = a1 & b1;
+  wire g8 = g5 & g4;
+  wire g9 = g7 ^ g8;
+  wire g10 = a2 ^ b2;
+  wire g12 = a2 & b2;
+  wire g13 = g10 & g9;
+  wire g14 = g12 | g13;
+  wire g15 = a3 ^ b3;
+  wire g16 = g15 ^ g14;
+  wire g17 = a3 & b3;
+  wire g18 = g15 & g14;
+  wire g21 = g18 | g17;
+  wire g23 = g9 ^ g10;
+  assign s0 = g1;
+  assign s1 = g6;
+  assign s2 = g23;
+  assign s3 = g16;
+  assign cout = g21;
+endmodule
