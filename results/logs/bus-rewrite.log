@@ -1,0 +1,6 @@
+build\cpu_pass.json: 4657 transistors (322 invariants)
+  buses: 43 cells -> 4539
+  latch muxes: 27 cells, gated clocks +26 -> 4484
+  new cells: {'LMUX2I': 27, 'PAOI22222X': 15, 'PAOI2222X': 10, 'PAOI2222': 10, 'PAOI222': 8}
+busopt variant: build/cpu_passopt.json 4696 -> buses 4572 (no latch muxes)
+cpu_bus_gates (Klaus): PASS cycles=96241383  (1199.5s)

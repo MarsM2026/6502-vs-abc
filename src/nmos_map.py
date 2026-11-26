@@ -80,7 +80,61 @@ LIBRARIES: dict[str, dict[str, tuple[str, int]]] = {
 }
 LIBRARIES["wide"] = {**LIBRARIES["static"], **{n: (f, static_area(f)) for n, f in WIDE.items()}}
 LIBRARIES["pass"] = {**LIBRARIES["wide"], **PASS}
-ALL_CELLS: dict[str, tuple[str, int]] = LIBRARIES["pass"]
+
+
+def _bus_branches(f: str) -> list[list[str]] | None:
+    """Branches of an AND-OR pull-down with at most 2 literals per branch, else None."""
+    if "!" in f:
+        return None
+    br = [t.strip("()").split("&") for t in f.split("|")]
+    if any(len(b) > 2 or any(len(x) != 1 for x in b) for b in br):
+        return None
+    if "(" in f and any(t.count("(") != t.count(")") for t in f.split("|")):
+        return None
+    return br
+
+
+# Cells that only src/bus_rewrite.py may place, after proving their condition; ABC never sees
+# them (they are not in any Liberty library), because their correctness depends on the
+# reachable states, not on the cell function alone. Each has the *same* function as the
+# static cell it replaces, so simulation and SAT treat the rewritten netlist exactly as before.
+#
+# Pass-transistor bus: an AND-OR-INVERT !(s1&d1 | s2&d2 | ...) where at most one select s_i
+# is 1 in every reachable state (proved with SAT plus register invariants). One pass
+# transistor per branch (gate s_i, source d_i; a one-literal branch passes VDD) onto one node,
+# a transistor that discharges the node in the other clock phase, and the restoring
+# inverter: n + 1 + 2. If exactly one select is always 1, the discharge transistor is not
+# needed: n + 2 ("...X").
+BUS: dict[str, tuple[str, int]] = {}
+for _n, (_f, _a) in LIBRARIES["wide"].items():
+    _br = _bus_branches(_f)
+    if _br and len(_br) >= 2 and _n.startswith("AOI"):
+        BUS["P" + _n] = (_f, len(_br) + 3)
+        BUS["P" + _n + "X"] = (_f, len(_br) + 2)
+
+# Latch-input multiplexer: a MUX2I whose only load is a flip-flop's D input moves into the
+# flip-flop's master stage. The master pass transistor becomes two, gated by (phi1 & s) and
+# (phi1 & !s), passing !A and !B (which must already exist, through an INV). The flip-flop's
+# own inverters restore the level, so the mux costs 1 transistor. The gated clocks cost 6
+# per select signal (two NOR2s), shared by every latch with that select; see
+# latch_clock_cost().
+LATCH: dict[str, tuple[str, int]] = {"LMUX2I": (PASS["MUX2I"][0], 1)}
+SELECT_PIN["LMUX2I"] = 2
+
+ALL_CELLS: dict[str, tuple[str, int]] = {**LIBRARIES["pass"], **BUS, **LATCH}
+
+# "busopt": the pass library, but every AND-OR-INVERT that could be a bus is priced as a bus
+# (n + 3), so ABC prefers wide AOIs. Only for mapping: the cells keep their static names and
+# areas in ALL_CELLS, so a cell that bus_rewrite.py cannot prove stays at its static cost.
+LIBRARIES["busopt"] = {n: ((f, min(a, BUS["P" + n][1])) if "P" + n in BUS else (f, a))
+                       for n, (f, a) in LIBRARIES["pass"].items()}
+
+
+def latch_clock_cost(cn) -> int:
+    """Gated clocks phi1&s and phi1&!s (NOR2 each) per distinct latch select, plus one
+    inverter for !phi1 if there is any."""
+    sels = {c.ins[2] for c in cn.cells if c.type == "LMUX2I"}
+    return 6 * len(sels) + (2 if sels else 0)
 
 
 def lib_path(variant: str = "static") -> Path:
@@ -150,7 +204,7 @@ def main(argv=None) -> int:
     ap.add_argument("--show", action="store_true", help="print the raw Yosys stat output")
     ap.add_argument("--script", default=None, help="ABC script (commas for spaces), overrides the default")
     ap.add_argument("--lib", choices=sorted(LIBRARIES), default="static",
-                    help="cell library: static gates, + wide gates, + pass-transistor cells")
+                    help="cell library: static gates, + wide gates, + pass-transistor cells, + bus pricing")
     args = ap.parse_args(argv)
 
     lib = write_liberty(variant=args.lib)

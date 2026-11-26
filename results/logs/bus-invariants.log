@@ -1,0 +1,7 @@
+netlist: 3042 gates (AND 1043, NOT 1159, OR 840), 143 flip-flops, 3200 signals
+381 candidates from 256x2000 random cycles (200s)
+  round 1: removed 58, 323 remain
+  round 2: removed 1, 322 remain
+  round 3: removed 0, 322 remain
+proved 322 invariants (0 constant flip-flops, 322 two-literal) (4s)
+saved build\cpu_pass.inv.json
