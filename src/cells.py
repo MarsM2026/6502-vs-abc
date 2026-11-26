@@ -19,9 +19,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from netlist import Circuit, Gate, _topo_sort
-from nmos_map import DFF_TRANSISTORS, PULLDOWNS
+from nmos_map import ALL_CELLS, DFF_TRANSISTORS, LIBRARIES, PIN_NAMES, PIN_RE
 
-PINS = "ABCDEFGH"
+PINS = PIN_NAMES
 
 
 @dataclass(frozen=True)
@@ -29,19 +29,22 @@ class Cell:
     name: str
     arity: int
     area: int
-    expr: str          # pull-down function over A..H; the cell computes its negation
+    expr: str          # pull-down function over A..P (may use !pin); the cell computes its negation
     fn: object         # fn(values: list[int], mask: int) -> int
 
 
-def _make_cell(name: str, expr: str) -> Cell:
-    pins = sorted(set(re.findall(r"[A-H]", expr)))
+def _make_cell(name: str, expr: str, area: int) -> Cell:
+    pins = sorted(set(re.findall(PIN_RE, expr)))
     assert pins == list(PINS[:len(pins)]), name
-    body = re.sub(r"[A-H]", lambda m: f"v[{PINS.index(m.group())}]", expr)
+    body = re.sub(PIN_RE, lambda m: f"v[{PINS.index(m.group())}]", expr).replace("!", "~")
     fn = eval(f"lambda v, m: ~({body}) & m")  # noqa: S307 (expressions are our own constants)
-    return Cell(name, len(pins), len(re.findall(r"[A-H]", expr)) + 1, expr, fn)
+    return Cell(name, len(pins), area, expr, fn)
 
 
-CELLS: dict[str, Cell] = {n: _make_cell(n, e) for n, e in PULLDOWNS.items()}
+# ALL_CELLS: every cell any library variant can produce (for reading and simulating mapped
+# netlists). CELLS: the static library, which cell_windows.py evolves with.
+ALL: dict[str, Cell] = {n: _make_cell(n, e, a) for n, (e, a) in ALL_CELLS.items()}
+CELLS: dict[str, Cell] = {n: ALL[n] for n in LIBRARIES["static"]}
 
 
 @dataclass
@@ -62,7 +65,7 @@ class CellNet:
 
     @property
     def area(self) -> int:
-        return sum(CELLS[c.type].area for c in self.cells)
+        return sum(ALL[c.type].area for c in self.cells)
 
     @property
     def total(self) -> int:
@@ -126,8 +129,8 @@ def load_mapped(path: str | Path, top: str = "cpu") -> CellNet:
         t, con = cell["type"], cell["connections"]
         if t == "$_DFF_P_":
             dffs.append((sig(con["D"][0]), sig(con["Q"][0])))
-        elif t in CELLS:
-            cells.append(CellInst(t, [sig(con[p][0]) for p in PINS[:CELLS[t].arity]], sig(con["Y"][0])))
+        elif t in ALL:
+            cells.append(CellInst(t, [sig(con[p][0]) for p in PINS[:ALL[t].arity]], sig(con["Y"][0])))
         elif t == "$_BUF_":
             alias[sig(con["Y"][0])] = sig(con["A"][0])
         else:
@@ -145,15 +148,16 @@ def load_mapped(path: str | Path, top: str = "cpu") -> CellNet:
     return cn
 
 
-def map_netlist(netlist: Path, script: str | None = None, oss_cad: Path = Path("C:/tools/oss-cad-suite")) -> CellNet:
-    """Map a gate netlist (our JSON) onto the NMOS library with ABC and load the cells."""
+def map_netlist(netlist: Path, script: str | None = None, oss_cad: Path = Path("C:/tools/oss-cad-suite"),
+                lib: str = "static") -> CellNet:
+    """Map a gate netlist (our JSON) onto an NMOS library variant with ABC and load the cells."""
     import nmos_map
     from netlist import load_circuit, save_verilog
-    nmos_map.write_liberty()
+    lib_file = nmos_map.write_liberty(variant=lib)
     v = nmos_map.ROOT / "build" / "nmos_in.v"
     save_verilog(load_circuit(netlist), v)
     nmos_map.run_yosys(f"read_verilog {v.relative_to(nmos_map.ROOT).as_posix()}\nproc\nopt -nodffe -nosdff\ntechmap",
-                       oss_cad, script=script)
+                       oss_cad, script=script, lib=lib_file)
     return load_mapped(nmos_map.MAPPED_JSON)
 
 
@@ -163,6 +167,9 @@ def _parse(expr: str):
 
     def term():
         nonlocal pos
+        if expr[pos] == "!":
+            pos += 1
+            return ("!", [term()])
         if expr[pos] == "(":
             pos += 1
             t = alt()
@@ -188,7 +195,7 @@ def _parse(expr: str):
     return alt()
 
 
-_TREES = {n: _parse(c.expr) for n, c in CELLS.items()}
+_TREES = {n: _parse(c.expr) for n, c in ALL.items()}
 
 
 def expand(cn: CellNet) -> Circuit:
@@ -204,6 +211,11 @@ def expand(cn: CellNet) -> Circuit:
         if isinstance(t, int):
             return ins[t]
         op, kids = t
+        if op == "!":
+            x = build(kids[0], ins)
+            y = new()
+            gates.append(Gate("NOT", x, x, y))
+            return y
         acc = build(kids[0], ins)
         for k in kids[1:]:
             y = new()

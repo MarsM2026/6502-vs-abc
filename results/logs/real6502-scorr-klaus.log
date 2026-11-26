@@ -1,0 +1,5 @@
+Thu Nov 26 07:45:30 WEST 2026
+netlist: 3687 gates (AND 1058, NAND 1621, NOR 312, NOT 153, OR 520, XNOR 18, XOR 5), 414 flip-flops, 4118 signals
+compiled in 6s
+PASS cycles=96241378 settle_avg=3.59 settle_max=6 not_settled=0 (8519.7s)
+Thu Nov 26 10:07:37 WEST 2026

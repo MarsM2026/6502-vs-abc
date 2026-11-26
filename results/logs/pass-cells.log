@@ -1,0 +1,3 @@
+build\cpu_seqdc_deep600_it3.json [lib wide]: 4791 transistors, 134 AOI22/OAI22 -> MUX2I, select inverters +0, total 4657
+build\cpu_seqdc_deep600_it3.json [+strash;dc2;&get,-n;&dch,-f;&put;amap,-F,8,-A,16] [lib wide]: combinational 3933 NMOS transistors in 1025 cells, 143 flip-flops x 6 = 858, total 4791
+cpu_pass_gates (Klaus): PASS cycles=96241383  (316.3s)

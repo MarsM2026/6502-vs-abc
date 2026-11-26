@@ -43,13 +43,58 @@ PULLDOWNS.update({
 })
 
 
-def write_liberty(path: Path = LIB) -> None:
+PIN_NAMES = "ABCDEFGHIJKLMNOP"
+PIN_RE = r"[A-P]"
+
+
+def static_area(f: str) -> int:
+    """Static NMOS gate: one enhancement transistor per literal plus the depletion pull-up."""
+    return len(re.findall(PIN_RE, f)) + 1
+
+
+# Wide static gates, as in the 6502's decode PLA (a NOR plane) and its bus logic. A static
+# NMOS NOR has all pull-down transistors in parallel, so width costs only area.
+WIDE: dict[str, str] = {f"NOR{k}": "|".join(PIN_NAMES[:k]) for k in range(9, 17)}
+for n in range(4, 9):
+    WIDE["AOI" + "2" * n] = "|".join(f"({PIN_NAMES[2 * i]}&{PIN_NAMES[2 * i + 1]})" for i in range(n))
+
+# Pass-transistor cells: (pull-down form of the function, transistors). MUX2I = !(C ? A : B):
+# two pass transistors gated by C and !C, then an inverter that restores the level (an NMOS
+# pass transistor loses a threshold voltage): 2 + 2 = 4. The select complement !C is not in
+# the cell: mux_select_cost() adds an inverter (2) for every select signal that no INV
+# cell in the mapped netlist connects to its inverse, so a shared !C is counted once.
+PASS: dict[str, tuple[str, int]] = {"MUX2I": ("(A&C)|(B&!C)", 4)}
+SELECT_PIN = {"MUX2I": 2}
+
+
+def mux_select_cost(cn) -> int:
+    """Transistors for the select inverters of the pass-transistor cells in a CellNet."""
+    # an INV makes both its input and its output available in both polarities
+    inverted = {s for c in cn.cells if c.type == "INV" for s in (c.ins[0], c.y)}
+    selects = {c.ins[SELECT_PIN[c.type]] for c in cn.cells if c.type in SELECT_PIN}
+    return 2 * len(selects - inverted)
+
+
+LIBRARIES: dict[str, dict[str, tuple[str, int]]] = {
+    "static": {n: (f, static_area(f)) for n, f in PULLDOWNS.items()},
+}
+LIBRARIES["wide"] = {**LIBRARIES["static"], **{n: (f, static_area(f)) for n, f in WIDE.items()}}
+LIBRARIES["pass"] = {**LIBRARIES["wide"], **PASS}
+ALL_CELLS: dict[str, tuple[str, int]] = LIBRARIES["pass"]
+
+
+def lib_path(variant: str = "static") -> Path:
+    return LIB if variant == "static" else ROOT / "build" / f"nmos_{variant}.lib"
+
+
+def write_liberty(path: Path | None = None, variant: str = "static") -> Path:
+    path = path or lib_path(variant)
     L = ["library(nmos6502) {", "  delay_model : table_lookup;", "  time_unit : \"1ns\";",
          "  capacitive_load_unit (1,pf);"]
-    for name, f in PULLDOWNS.items():
-        pins = sorted(set(re.findall(r"[A-H]", f)))
+    for name, (f, area) in LIBRARIES[variant].items():
+        pins = sorted(set(re.findall(PIN_RE, f)))
         L.append(f"  cell({name}) {{")
-        L.append(f"    area : {len(re.findall(r'[A-H]', f)) + 1};")
+        L.append(f"    area : {area};")
         for p in pins:
             L.append(f"    pin({p}) {{ direction : input; capacitance : 1; }}")
         L.append(f"    pin(Y) {{ direction : output; function : \"!({f})\"; }}")
@@ -57,13 +102,15 @@ def write_liberty(path: Path = LIB) -> None:
     L.append("}")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(L) + "\n")
+    return path
 
 
 MAPPED_JSON = ROOT / "build" / "nmos_mapped.json"
 DEFAULT_SCRIPT = "+strash;dc2;&get,-n;&dch,-f;&put;map,-a"
 
 
-def run_yosys(read_cmds: str, oss_cad: Path, structural: bool = False, script: str | None = None) -> str:
+def run_yosys(read_cmds: str, oss_cad: Path, structural: bool = False, script: str | None = None,
+              lib: Path = LIB) -> str:
     """Area-only mapping (`map -a`): the library has no timing data, and we only
     care about transistor count. `structural` skips ABC's restructuring (dc2, dch),
     so the mapping follows the netlist's own structure."""
@@ -74,9 +121,9 @@ def run_yosys(read_cmds: str, oss_cad: Path, structural: bool = False, script: s
 async2sync
 dfflegalize -cell $_DFF_P_ 01
 opt -full -nodffe -nosdff
-abc -liberty {LIB.as_posix()} -script {abc_script}
+abc -liberty {lib.as_posix()} -script {abc_script}
 opt_clean -purge
-tee -q -o {stat_file.as_posix()} stat -liberty {LIB.as_posix()}
+tee -q -o {stat_file.as_posix()} stat -liberty {lib.as_posix()}
 write_json {MAPPED_JSON.as_posix()}
 """)
     env = dict(os.environ)
@@ -102,9 +149,11 @@ def main(argv=None) -> int:
                     help="map without ABC restructuring (measures the netlist's own structure)")
     ap.add_argument("--show", action="store_true", help="print the raw Yosys stat output")
     ap.add_argument("--script", default=None, help="ABC script (commas for spaces), overrides the default")
+    ap.add_argument("--lib", choices=sorted(LIBRARIES), default="static",
+                    help="cell library: static gates, + wide gates, + pass-transistor cells")
     args = ap.parse_args(argv)
 
-    write_liberty()
+    lib = write_liberty(variant=args.lib)
     if args.netlist is None:
         read = "read_verilog vendor/verilog-6502/ALU.v vendor/verilog-6502/cpu.v\nsynth -top cpu -flatten"
         label = "Arlet RTL"
@@ -116,10 +165,17 @@ def main(argv=None) -> int:
         label += " [structural]"
     if args.script:
         label += f" [{args.script}]"
-    out = run_yosys(read, args.oss_cad, args.structural, args.script)
+    if args.lib != "static":
+        label += f" [lib {args.lib}]"
+    out = run_yosys(read, args.oss_cad, args.structural, args.script, lib)
     if args.show:
         print(out)
     area, dffs, cells = parse_stat(out)
+    if any(t in SELECT_PIN for t in cells):
+        from cells import load_mapped
+        extra = mux_select_cost(load_mapped(MAPPED_JSON))
+        print(f"  select inverters for pass-transistor cells: +{extra}")
+        area += extra
     total = area + DFF_TRANSISTORS * dffs
     print(f"{label}: combinational {area:.0f} NMOS transistors in {sum(cells.values())} cells, "
           f"{dffs} flip-flops x {DFF_TRANSISTORS} = {DFF_TRANSISTORS * dffs}, total {total:.0f}")

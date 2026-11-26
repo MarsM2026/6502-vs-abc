@@ -25,6 +25,8 @@ def main(argv=None) -> int:
     ap.add_argument("--oss-cad", type=Path, default=Path("C:/tools/oss-cad-suite"))
     ap.add_argument("--abc", default=None,
                     help='replace the ABC command, e.g. "abc -dff -g AND,NAND,OR,NOR,XOR,XNOR"')
+    ap.add_argument("--init-zero", action="store_true",
+                    help="give every register initial value 0 (needed for scorr with abc -dff)")
     ap.add_argument("--tag", default="", help="suffix for the work files, so runs can overlap")
     args = ap.parse_args(argv)
 
@@ -36,7 +38,7 @@ def main(argv=None) -> int:
     script = script.replace("build/reabc_", f"build/reabc{args.tag}_")
     ys = ROOT / "build" / f"reabc{args.tag}.ys"
     ys.write_text(script)
-    save_verilog(c, ROOT / "build" / f"reabc{args.tag}_in.v")
+    save_verilog(c, ROOT / "build" / f"reabc{args.tag}_in.v", init_zero=args.init_zero)
     env = dict(os.environ)
     env["PATH"] = os.pathsep.join([str(args.oss_cad / "bin"), str(args.oss_cad / "lib"), env["PATH"]])
     subprocess.run([str(args.oss_cad / "bin" / "yosys"), "-q", "-s", str(ys)], cwd=ROOT, env=env, check=True)

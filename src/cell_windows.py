@@ -28,7 +28,7 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
-from cells import CELLS, CellInst, CellNet, expand, load_cells, map_netlist, save_cells, topo_sort
+from cells import ALL, CELLS, CellInst, CellNet, expand, load_cells, map_netlist, save_cells, topo_sort
 from dontcare import reachable_combos
 from netlist import save_circuit
 
@@ -161,7 +161,7 @@ def window_problem(cn: CellNet, members: set[int], outs_needed: set[int], combos
     val = dict(zip(ins, pats))
     for i in order:
         c = cn.cells[i]
-        val[c.y] = CELLS[c.type].fn([val[s] for s in c.ins], mask)
+        val[c.y] = ALL[c.type].fn([val[s] for s in c.ins], mask)
     return ins, outs, pats, [val[s] for s in outs], mask
 
 

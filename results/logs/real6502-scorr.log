@@ -1,0 +1,10 @@
+Thu Nov 26 07:28:46 WEST 2026
+real6502_scF4: out: 3969 gates (AND 1164, NAND 1748, NOR 340, NOT 148, OR 539, XNOR 25, XOR 5), 425 flip-flops, 4411 signals
+real6502_scF4: END settle_avg=4.00 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (5.1s)
+real6502_sc_deep1: out: 3824 gates (AND 1123, NAND 1671, NOR 329, NOT 156, OR 522, XNOR 17, XOR 6), 421 flip-flops, 4262 signals
+real6502_sc_deep1: END settle_avg=4.00 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (6.1s)
+real6502_sc_deep2: out: 3729 gates (AND 1093, NAND 1615, NOR 312, NOT 145, OR 539, XNOR 19, XOR 6), 414 flip-flops, 4160 signals
+real6502_sc_deep2: END settle_avg=4.00 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (5.4s)
+real6502_sc_deep3: out: 3687 gates (AND 1058, NAND 1621, NOR 312, NOT 153, OR 520, XNOR 18, XOR 5), 414 flip-flops, 4118 signals
+real6502_sc_deep3: END settle_avg=4.00 settle_max=6 not_settled=0 mismatches=0 (first 100 half-cycles: 12) (5.6s)
+Thu Nov 26 07:45:18 WEST 2026

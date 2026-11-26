@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-from cells import CELLS, CellInst, CellNet, expand, topo_sort  # noqa: E402
+from cells import ALL, CELLS, CellInst, CellNet, expand, topo_sort  # noqa: E402
 from cell_windows import optimise  # noqa: E402
 
 PINS = "ABCDEFGH"
@@ -28,7 +28,7 @@ def eval_cells(cn, env):
     v = dict(env)
     v[0], v[1] = 0, 1
     for c in cn.cells:
-        v[c.y] = CELLS[c.type].fn([v[s] for s in c.ins], 1)
+        v[c.y] = ALL[c.type].fn([v[s] for s in c.ins], 1)
     return v
 
 
@@ -56,9 +56,52 @@ class CellTests(unittest.TestCase):
             self.assertEqual(CELLS["AOI21"].fn([a, b, c], 1), 1 - ((a & b) | c))
             self.assertEqual(CELLS["NOR3"].fn([a, b, c], 1), 1 - (a | b | c))
 
+    def test_wide_and_pass_cells(self):
+        # NOR16: 16 parallel pull-downs + load = 17; AOI2222 = 9; MUX2I = !(C ? A : B), area 4 + shared select inverter
+        self.assertEqual(ALL["NOR16"].area, 17)
+        self.assertEqual(ALL["AOI2222"].area, 9)
+        self.assertEqual(ALL["MUX2I"].area, 4)
+        for a, b, c in itertools.product((0, 1), repeat=3):
+            self.assertEqual(ALL["MUX2I"].fn([a, b, c], 1), 1 - (a if c else b))
+        # bit-parallel evaluation stays inside the mask despite the inverted pin
+        self.assertEqual(ALL["MUX2I"].fn([0b0011, 0b0101, 0b0000], 0b1111), 0b1010)
+
+    def test_mux_select_cost_counts_each_select_once(self):
+        from nmos_map import mux_select_cost
+        # two muxes on select 5, one on select 6; signal 5 is already inverted by an INV
+        cn = CellNet({"x": [2, 3, 4, 5, 6]}, {"y": [9, 10, 11]},
+                     [CellInst("INV", [5], 7), CellInst("MUX2I", [2, 3, 5], 9),
+                      CellInst("MUX2I", [3, 4, 5], 10), CellInst("MUX2I", [2, 4, 6], 11)], [], 12)
+        self.assertEqual(mux_select_cost(cn), 2)
+        # a select that is itself the output of an INV also has its inverse available
+        cn.cells.append(CellInst("MUX2I", [2, 3, 7], 12))
+        self.assertEqual(mux_select_cost(cn), 2)
+
+    def test_pass_rewrite_preserves_function(self):
+        from pass_rewrite import use_pass_muxes
+        rng = random.Random(9)
+        names = ["INV", "AOI22", "OAI22", "NAND2"]
+        replaced = 0
+        for _ in range(40):
+            ins = list(range(2, 7))
+            sigs, cells, nxt = list(ins), [], 7
+            for _ in range(12):
+                t = rng.choice(names)
+                cells.append(CellInst(t, [rng.choice(sigs) for _ in range(ALL[t].arity)], nxt))
+                sigs.append(nxt)
+                nxt += 1
+            cn = CellNet({"x": ins}, {"y": sigs[5:]}, cells, [], nxt)
+            topo_sort(cn)
+            table = lambda: [[eval_cells(cn, dict(zip(ins, b)))[o] for o in cn.outputs["y"]]
+                             for b in itertools.product((0, 1), repeat=5)]
+            ref = table()
+            replaced += use_pass_muxes(cn)
+            self.assertEqual(ref, table())
+        self.assertGreater(replaced, 0)
+
     def test_expand_matches_cells(self):
-        """Every library cell, expanded to two-input gates, computes the same function."""
-        for name, cell in CELLS.items():
+        """Every cell of every library variant, expanded to two-input gates, computes the same function."""
+        for name, cell in ALL.items():
             ins = list(range(2, 2 + cell.arity))
             cn = CellNet({"x": ins}, {"y": [100]}, [CellInst(name, ins, 100)], [], 101)
             c = expand(cn)

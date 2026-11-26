@@ -62,11 +62,14 @@ _VEXPR = {"AND": "{a} & {b}", "OR": "{a} | {b}", "XOR": "{a} ^ {b}", "NAND": "~(
           "NOR": "~({a} | {b})", "XNOR": "~({a} ^ {b})", "NOT": "~{a}"}
 
 
-def save_verilog(c: Circuit, path: str | Path, top: str = "cpu", clk: str = "clk") -> None:
+def save_verilog(c: Circuit, path: str | Path, top: str = "cpu", clk: str = "clk",
+                 init_zero: bool = False) -> None:
     """Structural Verilog of the circuit, so Yosys/ABC can re-optimise our netlists.
     Every flip-flop is clocked on the rising edge of input `clk`. If the circuit has no
     such input (the real-6502 conversion: its registers advance once per settling step),
-    an extra port `clk` is added; it reads back as an unused input."""
+    an extra port `clk` is added; it reads back as an unused input.
+    init_zero: declare every register with initial value 0 (as in csim.py and csim_real.py),
+    so sequential ABC commands such as scorr know the start state."""
     def ref(s: int) -> str:
         return {0: "1'b0", 1: "1'b1"}.get(s, f"n{s}")
 
@@ -82,7 +85,7 @@ def save_verilog(c: Circuit, path: str | Path, top: str = "cpu", clk: str = "clk
         for i, s in enumerate(bits):
             L.append(f"  wire n{s} = {name}[{i}];" if len(bits) > 1 else f"  wire n{s} = {name};")
     for _, q in c.dffs:
-        L.append(f"  reg n{q};")
+        L.append(f"  reg n{q} = 1'b0;" if init_zero else f"  reg n{q};")
     for g in c.gates:
         L.append(f"  wire n{g.y} = " + _VEXPR[g.op].format(a=ref(g.a), b=ref(g.b)) + ";")
     clk_sig = clk if extra_clk else ref(c.inputs[clk][0])
